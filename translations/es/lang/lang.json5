@@ -16,38 +16,38 @@
 {
     lang: {
         // Placeholder: %command%
-        unexpected_command_error: "An **error** occured while executing __command__ ``%command%``",
+        unexpected_command_error: "Ocurrió un **error** al ejecutar el comando __command__ ``%command%``",
         // Placeholder: %function%
-        unexpected_function_error: "An **error** occured while executing __function__ ``%function%``",
+        unexpected_function_error: "Ocurrió un **error** al ejecutar la función __function__ ``%function%``",
         // Placeholder: %guild%
-        embed_footer: "%guild% Discord Bot",
+        embed_footer: "%guild% Bot de Discord",
         // Placeholder: none
-        no_reason_provided: "No reason provided",
+        no_reason_provided: "No se proporcionó razón",
         // Placeholder: none
-        nothing_selected: "Nothing selected",
+        nothing_selected: "Nada seleccionado",
         // Placeholder: none
-        modal_placeholder: "Enter a value...",
+        modal_placeholder: "Ingrese un valor...",
         // Placeholder: none
-        left_guild: "User left guild",
+        left_guild: "El usuario dejó el servidor",
         // Placeholder: none
-        leave_empty: "Leave empty to unset"
+        leave_empty: "Dejar vacío para desestablecer"
 
     },
     embeds: {
         // Placeholder: %category%
         help: {
-            title: "Help Page Categories",
-            description: "``📌`` Use the **__dropdown menu__** for a list of commands",
+            title: "Categorías de la Página de Ayuda",
+            description: "``📌`` Usa el **__menú desplegable__** para ver la lista de comandos",
             fields_template: {
                 name: '%category%',
-                value: '%category% commands',
+                value: 'Comandos de %category%',
             },
             defaultFooter: true,
             defaultTimestamp: true,
         },
         // Placeholder: %category%, %help%, %user%
         help_page: {
-            title: "%category% Help Page",
+            title: "Página de ayuda de %category%",
             description: "%help%",
             description_footer: "\n\n``(!)`` This help page was **generated** __based__ on %user% ``permissions``",
             guildIcon: true,
@@ -4526,9 +4526,9 @@
         // Placeholder: none
         core_help_selectmenu: "Selectmenu",
         // Placeholder: %category%
-        core_help_dropdown_name: "%category% commands",
+        core_help_dropdown_name: "Comandos de %category%",
         // Placeholder: %category%
-        core_help_dropdown_description: "Select for a list of %category% commands.",
+        core_help_dropdown_description: "Select for a list of Comandos de %category%.",
         // Placeholder: none
         core_leaderboard_back: "Back",
         // Placeholder: none
