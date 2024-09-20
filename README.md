@@ -10,6 +10,22 @@ Welcome to the official repository for **translation files** for AthenaBot! This
 
 ---
 
+## Current State
+* 🇬🇧 English Translation: 100% complete (Default language)
+* 🇩🇪 German Translation: 75% complete
+* 🇫🇷 French Translation: 0% complete
+* 🇪🇸 Spanish Translation: 0% complete
+* 🇳🇱 Dutch Translation: 0% complete
+* 🇹🇷 Turkish Translation: 0% complete
+* 🇵🇹 Portugese Translation: 0% complete
+
+---
+
+## Contributors
+* EinfachMaiki (1211700590271266867) » German Translation 75%
+
+---
+
 ## Overview
 
 This repository contains **JSON** files with strings written in English that are used by the bot. The goal is for contributors to translate these English strings into other languages directly using GitHub's web interface.
@@ -73,4 +89,7 @@ That’s it! The maintainers will review your contribution and, once approved, y
 
 - **Accuracy**: Make sure the translations are accurate and contextually correct.
 - **Do Not Change Structure**: Do not alter the JSON keys or the structure of the file, only the text values.
+
+---
+
 
