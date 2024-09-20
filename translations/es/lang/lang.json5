@@ -37,7 +37,7 @@
         // Placeholder: %category%
         help: {
             title: "Categorías de la Página de Ayuda",
-            description: "``📌`` Usa el **__menú desplegable__** para ver la lista de comandos",
+            description: "``📌``Usa el **__menú desplegable__** para ver la lista de comandos",
             fields_template: {
                 name: '%category%',
                 value: 'Comandos de %category%',
@@ -49,7 +49,7 @@
         help_page: {
             title: "Página de ayuda de %category%",
             description: "%help%",
-            description_footer: "\n\n``(!)`` This help page was **generated** __based__ on %user% ``permissions``",
+            description_footer: "\n\n``(!)``Esta página de ayuda fue generada _basada_ en los permisos de %user%``permissions``",
             guildIcon: true,
             defaultFooter: true,
             defaultTimestamp: true,
