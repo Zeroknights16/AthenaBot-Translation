@@ -1,0 +1,27 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Tebex                                                                          | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        // Tebex secret key. Never share this key with an untrusted person!
+        // More information about how to get your tebex secret key can be
+        // found at the following website:
+        // * https://docs.tebex.io/store/faq#how-can-i-find-my-secret-key
+        //
+        // If you have any questions regarding this and its safety feel
+        // free to create a ticket in our Support Discord (String)
+        tebex_secret_key: "",
+    },
+}

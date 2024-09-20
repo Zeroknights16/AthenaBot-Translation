@@ -1,0 +1,239 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Economy                                                                        | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    // The economy system is a feature that allows users
+    // to earn and spend virtual currency within the Discord
+    // server. It can be used to reward users for their 
+    // activity, such as sending messages, playing games, 
+    // or participating in events. The economy system can
+    // also be integrated with other plugins to provide 
+    // additional functionality and incentives.
+    config: {
+        // Amount of coins given to a user when they 
+        // do a certain action in your Discord server.
+        // Set to 0 to disable gaining coins for that
+        // action (Number)
+        coins: {
+            message_sent: 1,
+            invite: 150,
+            game_played: 5,
+            game_won: 15,
+            counting_game: 3,
+            level_up: 100,
+            daily: 125,
+            weekly: 1000,
+            calltime_minute: 15,
+            approved_suggestion: 200,
+            suggestion_vote: 25,
+            poll_vote: 25,
+            birthday: 5000,
+            starboard_message: 200,
+            punishment: -5000,
+        },
+
+        // Configuration for shop items available for purchase.
+        // Users can buy these items using their earned coins.
+        //
+        // All item configurations follow following format:
+        // {
+        //     id: 0,
+        //     emoji: '🗿',
+        //     name: 'VIP',
+        //     description: 'Enter to purchase the VIP role',
+        //     cost: 50000,
+        //     requirement: {
+        //          rankId: 5,
+        //          oneTimePurchase: true,
+        //     },
+        //     reward: [
+        //          {
+        //               type: "ROLE",
+        //               target: "804354029076348959",
+        //          },
+        //     ],
+        // },
+        // 
+        // * id: Unique identifier for the item - this is used
+        // to determine whether a user has already purchased this
+        // item or not. Even if you completely remove them item
+        // from your shop configuration, the id should not be
+        // reused anywhere.
+        // * emoji: Emoji that will be displayed in the shop
+        // * name: Name of the item
+        // * description: Description of dropdown menu item
+        // * cost: Amount of coins required to purchase the item
+        // * requirement: Following requirements must be fullfilled
+        //                in order to be able to purchase the item:
+        // ** rankId: Required rank ID to purchase the item
+        // ** oneTimePurchase: Whether the item can be purchased
+        //                     only once or multiple times
+        //
+        // * reward: List of rewards that will be given to the
+        //           user after purchasing the item. Each reward
+        //           configuration follows following format:
+        // ** type: Type of the reward:
+        // *** ROLE, BOOSTER, LOOTBOX, CHANNEL_MESSAGE, COUPON
+        // ** target: Represents a required information for the 
+        //            reward type. For example, if the type is ROLE
+        //            the target should be the role ID.
+        //
+        // If you have any questions please feel free to create a ticket!
+        // NOTE: Please be aware that the economy system is hard to
+        // balance and can be exploited. Please be aware of that when
+        // configurating coupon as shop items. Ignore this warning if you
+        // disable jobs.
+        shop_items: [
+            {
+                id: 0,
+                emoji: '👑',
+                name: 'VIP',
+                description: 'Enter to purchase the VIP role',
+                cost: 50000,
+                requirement: {
+                    rankId: 5,
+                    oneTimePurchase: true,
+                },
+                reward: [
+                    {
+                        type: "ROLE",
+                        target: "804354029076348959",
+                    }
+                ],
+            },
+            {
+                id: 1,
+                emoji: '🪄',
+                name: 'Gilded Elixir',
+                description: 'Enter to purchase a gilded elixir',
+                cost: 750,
+                requirement: {
+                    rankId: 0,
+                    oneTimePurchase: false,
+                },
+                reward: [
+                    {
+                        type: "BOOSTER",
+                        target: "booster_coin_1h_2",
+                    },
+                ],
+            },
+            {
+                id: 2,
+                emoji: '🎁',
+                name: 'Lootbox',
+                description: 'Enter to purchase a lootbox',
+                cost: 500,
+                requirement: {
+                    rankId: 0,
+                    oneTimePurchase: false,
+                },
+                reward: [
+                    {
+                        type: "LOOTBOX",
+                        target: null,
+                        amount: 1,
+                    }
+                ],
+            },
+            {
+                id: 3,
+                emoji: '💬',
+                name: 'Channel Message',
+                description: 'Enter to purchase a channel message',
+                cost: 2000,
+                requirement: {
+                    rankId: 0,
+                    oneTimePurchase: false,
+                },
+                reward: [
+                    {
+                        type: "CHANNEL_MESSAGE",
+                        target: "1274005906610454619",
+                        predefined_id: "test2",
+                    }
+                ],
+            },
+            {
+                id: 4,
+                emoji: '🎟️',
+                name: 'Coupon Code',
+                description: 'Enter to purchase a coupon code',
+                cost: 100000,
+                requirement: {
+                    rankId: 0,
+                    oneTimePurchase: false,
+                },
+                reward: [
+                    {
+                        type: "COUPON",
+                        target: "10",
+                    }
+                ],
+            }
+        ],
+
+        // Each time a user claims their daily/weeky reward,
+        // their streak will increase by 1. If a user misses
+        // his claim the streak resets to 0. The streak bonus
+        // is calculated by the formula below and is added on
+        // top of the base value configured above.
+        streaks: {
+            daily: {
+                // Whether the streak bonus should be enabled
+                // for daily claims (Boolean)
+                enabled: true,
+                // Formula to calculate the streak bonus (String)
+                // Placeholder: %streak% (0 - ∞) 
+                bonus: "%streak% * 25 + 25",
+            },
+            weekly: {
+                // Whether the streak bonus should be enabled
+                // for weekly claims (Boolean)
+                enabled: true,
+                // Formula to calculate the streak bonus (String)
+                // Placeholder: %streak% (0 - ∞) 
+                bonus: "%streak% * 250 + 250",
+            }
+        },
+
+        // The game_wagers feature allows users to place bets
+        // on games with configurable limits and multipliers.
+        game_wagers: {
+            // Whether the game wager system should be enabled (Boolean)
+            enabled: true,
+            // Maximum wager amount allowed for any game (Number)
+            max: 1000,
+            // Cooldown period between placing wagers (String)
+            cooldown: "5m",
+            // Multipliers for each game if won (Number)
+            multipliers: {
+                gtn: 1.5,
+                hangman: 1.5,
+                rps: 2,
+                trivia: 2.5,
+            }
+        },
+
+        cooldowns: {
+            // Cooldown period between spying bank wallets (String)
+            spy: "30m",
+            // Cooldown period between stealing coins from a user (String)
+            rob: "3h",
+            // Cooldown period between begging for goods (String)
+            beg: "2h",
+        }
+    }
+}
