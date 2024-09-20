@@ -1,0 +1,186 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Commands                                                                       | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        //
+        // (!) Command Loading
+        // If set to false the command will be unloaded upon restart.
+        // The botinfo and setup commands are whitelisted and cannot be disabled
+        // unless the "watermark" addon has been purchased.
+        //
+        // If you have purchased the "watermark" addon please make sure you have used 
+        // the "/claim" command in our Support Discord. Once you have done that the
+        // botinfo command will be unloaded if set to false in this config upon restart.
+        core: {
+            av: true,
+            botinfo: true,
+            debug: true,
+            help: true,
+            info: true,
+            leaderboard: true,
+            ping: true,
+            reload: true,
+            restart: true,  
+            server: true,
+            setup: false,
+            stats: true,
+            status: true,
+            stealemoji: true,
+        },
+
+        tickets: {
+            taccept: true,
+            tadd: true,
+            tapplication: true,
+            tblacklist: true,
+            tclaim: true,
+            tclose: true,
+            tdeny: true,
+            tdiscuss: true,
+            televate: true,
+            tlower: true,
+            tmove: true,
+            tpanel: true,
+            tremove: true,
+            trename: true,
+            treset: true,
+            tunblacklist: true,
+            tunclaim: true,
+        },
+
+        staff_management: {
+            demote: true,
+            promote: true,
+            resign: true,
+            roster: true,
+            task: true,
+            taskadmin: true,
+        },
+
+        join_to_create: {
+            tempvoice: true,
+        },
+
+        tebex: {
+            coupon: true,
+            giftcard: true,
+            tebexban: true,
+        },
+
+        moderation: {
+            ban: true,
+            clearhistory: true,
+            history: true,
+            kick: true,
+            lock: true,
+            mute: true,
+            nick: true,
+            punishment: true,
+            purge: true,
+            slowmode: true,
+            unban: true,
+            unlock: true,
+            unmute: true,
+            unwarn: true,
+            warn: true,
+        },
+
+        fun: {
+            ac: true,
+            birthday: true,
+            dicksize: true,
+            gtn: true,
+            hangman: true,
+            higherorlower: true,
+            level: true,
+            leveladmin: true,
+            meme: true,
+            rps: true,
+            sudo: true,
+            trivia: true,
+        },
+
+        security: {
+            verify: true,
+            verifypanel: true,
+        },
+
+        invites: {
+            invites: true,
+            invitesadmin: true,
+            whoinvited: true,
+        },
+
+        giveaway: {
+            giveaway: true,
+        },
+
+        command_maker: {
+            buttons: true,
+        },
+
+        management: {
+            channelstats: true,
+            editmsg: true,
+            poll: true,
+            reactionrole: true,
+            remindme: true,
+            roleall: true,
+            sendmsg: true,
+            sticky: true,
+            suggest: true,
+        },
+
+        economy: {
+            bank: true,
+            beg: true,
+            booster: true,
+            claim: true,
+            coins: true,
+            economyadmin: true,
+            job: true,
+            lootbox: true,
+            quests: true,
+            rank: true,
+            rob: true,
+            shop: true,
+        },
+
+        music: {
+            autoplay: true,
+            back: true,
+            bump: true,
+            clear: true,
+            filters: true,
+            lavalink: true,
+            lyrics: true,
+            nowplaying: true,
+            pause: true,
+            play: true,
+            queue: true,
+            remove: true,
+            loop: true,
+            replay: true,
+            resume: true,
+            seek: true,
+            shuffle: true,
+            skip: true,
+            skipto: true,
+            stop: true,
+            volume: true,
+        },
+    },
+}

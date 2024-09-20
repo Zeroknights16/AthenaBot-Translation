@@ -1,0 +1,190 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     1.0.0                                                                          | #
+// # |  Config:      Command Maker                                                                  | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        // This addon allows you to create custom commands/buttons.
+        // This configuration file starts with the configuration of
+        // custom commands:
+        commands: {
+            // The id of this custom command (String)
+            // Format: "<id>": { ... },
+            //
+            // You can add up to 5 custom commands. Please note that
+            // the command name must be unique and no command can
+            // be overriden
+            "ip": {
+                // The name of your command (String)
+                command_name: "ip",
+                // Command description (String)
+                command_description: "Displays the ip of our Minecraft server",
+                // The permissions that are required for this command to
+                // be able to execute it. This addon hooks into the core
+                // permission config and works the exact same way as any
+                // other commands or interactions. For more information
+                // please visit the permission config. The following option
+                // requires a role from the "permission_levels" list unless
+                // the built in permission system is disabled, then it will
+                // be ignored (String)
+                command_permission: "everyone",
+                // The response for this command
+                command_message_response: {
+                    // Whenever the command is being executed a message
+                    // will be sent. This message must be configured using
+                    // the /sendmsg and /editmsg command in your Discord.
+                    // Once you have configured a message to your liking
+                    // press the save button to assign your message design
+                    // a specified predefined message id which you must 
+                    // put down below (String)
+                    predefined_message_id: "ip_test",
+                    // If you want to send any files with this message
+                    // put the path of the file in the following Array. 
+                    // The file path always starts at the executed file,
+                    // in this case "index.js". It is the file which you
+                    // start the bot with (Array) 
+                    files: [],
+                    // List of components you want to apply on the sent
+                    // message. These components can only be buttons at
+                    // the time being. All custom buttons must be
+                    // configured below under the "components" configuration
+                    // option. This configuration option requires a list
+                    // of component ids. There's a limit of 25 components
+                    // per message by Discord (Array)
+                    components: ["server_information"],
+                    // Whether the sent message should be ephemeral - only
+                    // visible to the user who executed the command (Boolean)
+                    ephemeral: false,
+                },
+                // The actions that are executed when the command is being
+                // executed. You can add unlimited actions. The following
+                // actions are available (types):
+                // * "CHANNEL_SEND" - Sends the response message to a different channel
+                // * "ROLE_APPLY" - Applies a role to the executor
+                // * "ROLE_REMOVE" - Removes a role from the executor
+                //
+                // All actions require a target. The target is the ID of the
+                // channel or role. Format:
+                // {
+                //     type: "<type>",
+                //     target: "<target_id>",
+                // },
+                // 
+                // If you just like to send a respond message set actions to []. (Array)
+                actions: [
+                    {
+                        type: "ROLE_APPLY",
+                        target: "804354037662220289",
+                    }
+                ],
+            },
+        },
+
+        // Message components configuration. For the time being only custom
+        // buttons can be configured. Stay tuned for more in the future!
+        // These components can be either applied on a message sent by
+        // custom commands or all of them can be applied on any other message
+        // sent in your Discord by the bot via the "/buttons" command.
+        components: {
+            // The id of this custom component (String)
+            // Format: "<id>": { ... },
+            //
+            // You can add unlimited custom components. Please note that
+            // the component names must be unique and no component can
+            // be overriden
+            "server_information": {
+                // Component type. Must be "BUTTON" at the time being (String)
+                type: "BUTTON",
+                // The text displayed on this button (String)
+                button_name: "Info",
+                // The emoji displayed at this button. Set it to false if
+                // this button should not have a displayed emoji (String)
+                button_emoji: "📊",
+                // Button Type. The type of the button defines which color
+                // is used at the background (String)
+                //
+                // It must be one of the following:
+                // * Primary - Blue color
+                // * Secondary - Gray color
+                // * Success - Green color
+                // * Danger - Red color
+                // * Link - Link button
+                button_type: "DANGER",
+                // If the button type is set to "LINK" the button redirects
+                // the user a website or a link in general. This link must be
+                // configured below. This option will be ignored otherwise (String)
+                button_url: "",
+                // The permissions that are required for this component to
+                // be able to execute it. This addon hooks into the core
+                // permission config and works the exact same way as any
+                // other commands or interactions. For more information
+                // please visit the permission config. The following option
+                // requires a role from the "permission_levels" list unless
+                // the built in permission system is disabled, then it will
+                // be ignored (String)
+                button_permission: "everyone",
+                // The response for this component
+                button_message_response: {
+                    // Whenever the component is being executed a message
+                    // will be sent. This message must be configured using
+                    // the /sendmsg and /editmsg command in your Discord.
+                    // Once you have configured a message to your liking
+                    // press the save button to assign your message design
+                    // a specified predefined message id which you must 
+                    // put down below (String)
+                    predefined_message_id: "server_information_test",
+                    // If you want to send any files with this message
+                    // put the path of the file in the following Array. 
+                    // The file path always starts at the executed file,
+                    // in this case "index.js". It is the file which you
+                    // start the bot with (Array) 
+                    files: [],
+                    // List of components you want to apply on the sent
+                    // message. These components can only be buttons at
+                    // the time being. This configuration option requires
+                    // a list of component ids. There's a limit of 25
+                    // components per message by Discord (Array)
+                    components: [],
+                    // Whether the sent message should be ephemeral - only
+                    // visible to the user who executed the command (Boolean)
+                    ephemeral: true,
+                    // Whether the message the component was attached too should
+                    // be updated instead of a new one being sent (Boolean)
+                    message_update: false,
+                },
+                // The actions that are executed when the command is being
+                // executed. You can add unlimited actions. The following
+                // actions are available (types):
+                // * "CHANNEL_SEND" - Sends the response message to a different channel
+                // * "ROLE_APPLY" - Applies a role to the executor
+                // * "ROLE_REMOVE" - Removes a role from the executor
+                //
+                // All actions require a target. The target is the ID of the
+                // channel or role. Format:
+                // {
+                //     type: "<type>",
+                //     target: "<target_id>",
+                // },
+                // 
+                // If you just like to send a respond message set actions to []. (Array)
+                actions: [
+                    {
+                        type: "ROLE_APPLY",
+                        target: "804354037662220289",
+                    }
+                ],
+            },
+        }
+    }
+}

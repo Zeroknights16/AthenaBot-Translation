@@ -1,0 +1,247 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Permission                                                                     | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        // If set to false the bot uses discord's built in permission system (Boolean)
+        // * https://support.discord.com/hc/en-us/articles/4644915651095-Command-Permissions
+        //
+        // NOTE: If this option is set to false everyone can use every command unless 
+        // the permissions have already been configured in your Discord server settings!
+        enabled: true,
+        // You can add as many permission levels you want.
+        // The name of the permission level can be choosen randomly, 
+        // it does not have to be the same name as the Discord role.
+        // 
+        // Each permission level is assigned to one Discord role ID. 
+        // Once a command is executed the bot will get the required
+        // permission level of that command. The bot will check whether 
+        // the user owns the configured role of that permission level or
+        // a role that is above the configured one in the Discord role
+        // hierarchy. 
+        //
+        permission_levels: {
+            management: "804354019455139900",
+            admin: "804354024048427009",
+            staff: "804354029076348959",
+            support: "884573835205148692",
+            member: "804354037662220289",
+            everyone: "804352424777220186", // Same ID as your guild ID
+        },
+        // List of user IDs, who will bypass all permission checks (Array)
+        admins: ["707336356786864211"],
+
+
+        //
+        // (!) Permission configuration
+        // <command_name>: "<permission_level>"
+        //
+        core: {
+            av: "member",
+            botinfo: "member",
+            debug: "management",
+            help: "member",
+            info: "member",
+            ping: "member",
+            reload: "management",
+            restart: "management",
+            server: "member",
+            setup: "management",
+            stats: "member",
+            status: "member",
+            stealemoji: "member",
+            helpMenuButton: "member",
+            helpMenu: "member",
+            leaderboard: "member",
+            setupMenu: "management",
+            setupModalCreate: "management",
+            setupModal: "management",
+        },
+
+        tickets: {
+            taccept: "support",
+            tadd: "support",
+            tapplication: "management",
+            tblacklist: "support",
+            tclaim: "support",
+            tclose: "support",
+            tdeny: "support",
+            tdiscuss: "support",
+            televate: "support",
+            tlower: "support",
+            tmove: "support",
+            tpanel: "management",
+            tremove: "support",
+            trename: "support",
+            treset: "management",
+            tunblacklist: "support",
+            tunclaim: "support",
+            appHistory: "support",
+            applicationDmButton: "member",
+            tappModal: "member",
+            tappMenu: "member",
+            tpanelMenu: "member",
+            tbuttons: "support",
+            tcreateModal: "member",
+        },
+
+        staff_management: {
+            demote: "admin",
+            promote: "admin",
+            resign: "staff",
+            roster: "management",
+            task: "staff",
+            taskadmin: "management",
+            taskedit: "management",
+            taskeditModal: "management",
+            taskembed: "staff",
+        },
+
+        join_to_create: {
+            tempvoice: "member",
+        },
+
+        tebex: {
+            coupon: "management",
+            giftcard: "management",
+            tebexban: "management",
+        },
+
+        moderation: {
+            ban: "admin",
+            clearhistory: "management",
+            history: "staff",
+            kick: "admin",
+            lock: "staff",
+            mute: "staff",
+            nick: "staff",
+            punishment: "staff",
+            purge: "admin",
+            slowmode: "staff",
+            unban: "staff",
+            unlock: "staff",
+            unmute: "staff",
+            unwarn: "staff",
+            warn: "staff",
+            historyButton: "staff",
+            proof: "staff",
+            globalBanButton: "admin",
+        },
+
+        fun: {
+            ac: "member",
+            birthday: "member",
+            dicksize: "member",
+            gtn: "member",
+            hangman: "member",
+            higherorlower: "member",
+            level: 'member',
+            leveladmin: 'manager',
+            meme: "member",
+            rps: "member",
+            sudo: "admin",
+            trivia: "member",
+
+            hangmanModal: "member",
+            tictactoe: "member",
+            fourconnect: "member",
+        },
+
+        security: {
+            verify: "admin",
+            verifypanel: "management",
+            verification: "everyone",
+            verifypanelButton: "everyone",
+        },
+
+        invites: {
+            invites: "member",
+            invitesadmin: "management",
+            whoinvited: "staff"
+        },
+
+        giveaway: {
+            giveaway: "admin",
+            genter: "member",
+            gleave: "member",
+        },
+
+        command_maker: {
+            buttons: "admin",
+        },
+
+        management: {
+            channelstats: "admin",
+            editmsg: "admin",
+            poll: "admin",
+            reactionrole: "admin",
+            remindme: "staff",
+            roleall: "management",
+            sendmsg: "admin",
+            sticky: "admin",
+            suggest: "member",
+            embedModal: "admin",
+            editButton: "admin",
+            editModal: "admin",
+            reactionpanel: "member",
+            suggestPanel: "member",
+            suggestAdminPanel: "admin",
+            pollRegister: "member",
+            pollAdmin: "admin",
+        },
+
+        economy: {
+            bank: "member",
+            beg: "member",
+            booster: "member",
+            claim: "member",
+            coins: "member",
+            economyadmin: "management",
+            job: "member",
+            lootbox: "member",
+            quests: "member",
+            rank: "member",
+            rob: "member",
+            shop: "management",
+            economyShop: "member",
+        },
+
+        music: {
+            autoplay: "member",
+            back: "member",
+            bump: "member",
+            clear: "member",
+            filters: "member",
+            lavalink: "member",
+            lyrics: "member",
+            nowplaying: "member",
+            pause: "member",
+            play: "member",
+            queue: "member",
+            remove: "member",
+            loop: "member",
+            replay: "member",
+            resume: "member",
+            seek: "member",
+            shuffle: "member",
+            skip: "member",
+            skipto: "member",
+            stop: "member",
+            volume: "member",
+            musicButton: "member",
+            queueButton: "member",
+        },
+    },
+}

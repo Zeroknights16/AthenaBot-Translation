@@ -1,0 +1,30 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                      | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Web API                                                                        | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        // Server Port (String)
+        port: "3111",
+        // This is required to acess the API - MAKE SURE TO CHANGE THIS (!!!) (Array)
+        authentication_key: ['09563-34763-36235-36235'],
+        // Whitelisted ips (Array)
+        whitelisted_ips: [],
+        // This is the base IP used for different web api hooks. If you do
+        // not have a domain pointing to the ip the bot is running on set
+        // the value to the numeric ip of your server. Otherwise you can
+        // set it to the domain (String)
+        base_ip: "localhost",
+    },
+}

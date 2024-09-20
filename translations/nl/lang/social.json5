@@ -1,0 +1,92 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Social                                                                         | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        youtube_notification: {
+            // Whether this module should be enabled (Boolean)
+            enabled: true,
+            // Google api key to access the youtube api V3. For more 
+            // information about how to get your own api key visit:
+            //
+            // * https://elfsight.com/blog/how-to-get-youtube-api-key-tutorial/
+            youtube_api_key: "",
+            // List of subscribed channels. If any of these youtube
+            // channels are uploading a new video a new notification
+            // message will be sent in the configured Discord channel.
+            // "mention_roles" requires role ids which are being
+            // mentioned for each new upload.
+            //
+            // Please follow following format to subscribe to a new channel:
+            // {
+            //     youtube_channel_username: "",
+            //     discord_channel_id: "",
+            //     mention_roles: [],
+            // },
+            //
+            // Please make sure you copy paste the username because this option
+            // is case sensitive. If it doesn't match the exact username the
+            // channel will fail to load (Array)
+            subscribed_channels: [
+                {
+                    youtube_channel_username: "DieCrew",
+                    discord_channel_id: "804354080008699924",
+                    mention_roles: ["804354025592062015"],
+                },
+            ]
+        },
+
+        twitch_notification: {
+            // Whether this module should be enabled (Boolean)
+            enabled: false,
+            // Your twitch client id and secret can be found at
+            // Twitch's developer portal:
+            // * https://dev.twitch.tv/console/apps
+            //
+            // If you haven't already create an application, 
+            // give it a random name and set OAuth Redirect Urls
+            // to "http://localhost". Select category option
+            // "ChatBot" after and click on create.
+            // Once created press button "manage" to see the
+            // required information (String)
+            twitch_client_id: "",
+            // Twitch client id - look at the comment above (String)
+            twitch_client_secret: "",
+            // List of subscribed channels. If any of these twitch
+            // channels are starting a new stream a new notification
+            // message will be sent in the configured Discord channel.
+            // "mention_roles" requires role ids which are being
+            // mentioned for each new upload.
+            //
+            // Please follow following format to subscribe to a new channel:
+            // {
+            //     streamer_name: "",
+            //     discord_channel_id: "",
+            //     mention_roles: [],
+            // },
+            //
+            // Please make sure you copy paste the username because this option
+            // is case sensitive. If it doesn't match the exact username the
+            // channel will fail to load (Array)
+            subscribed_channels: [
+                {
+                    streamer_name: "2bough",
+                    discord_channel_id: "804354080008699924",
+                    mention_roles: ["804354025592062015"],
+                },
+            ]
+        }
+    }
+}

@@ -1,0 +1,132 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Security                                                                       | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        verification: {
+            // List of roles that are being removed once the user has successfully
+            // verified themself as human. This configuration options requires
+            // a list of role ids. Keep empty to ignore this option (Array)
+            roles_to_remove: [],
+            // List of roles that are being applied once the user has succesfully
+            // verified themself as human. This configuration options requires a
+            // list of role ids. Keep empty to ignore this option (Array)
+            roles_to_add: ['804354037662220289'],
+            // If set to true every user who have already verified themselves before
+            // in your Discord server will be automatically verified after rejoining
+            // the server (Boolean)
+            automatic_verification: false,
+            // Configuration option "minimum_account_age" limits the usage of the
+            // verification panel. Based on their account age users are allowed
+            // to start the verification process or not. This helps to keep new
+            // accounts away from your server which are most of the time used
+            // as alternate accounts.
+            minimum_account_age: {
+                // Whether this module should be enabled (Boolean)
+                enabled: true,
+                // The minimum account age that is required to start the verification
+                // process. Please follow format: "<months>mo <days>d" (String)
+                // 
+                // Examples:
+                // * "28d" -> 28d
+                // * "1mo" -> 30d
+                // * "1mo 12d" -> 42d
+                // * "1y 11mo 2d" -> 692d
+                age: "30d",
+            },
+            // Configuration option "user_join_activity" limits the usage of the
+            // verification panel. Based on the amount of users joining per minute
+            // the verification process will be paused for all users for a configured
+            // amount of time. This limitation is used to protect your server from
+            // being flooded by spam bots if they'd be able to break through the 
+            // verification system.
+            user_join_activity: {
+                // Whether this module should be enabled (Boolean)
+                enabled: true,
+                // How many joins per minute are maximum allowed for the verification
+                // panel to stay active (Number)
+                max_joins_per_minute: 30,
+                // Once this module has been triggered no verification processes can
+                // be started within the specified timestamp below. Please follow
+                // format: "<days>d <hours>h <minutes>m" (String)
+                disabled_for: "15m",
+            },
+        },
+
+        // This module is used to prevent bots from being added to your server.
+        // Every bot that is being added while AthenaBot is online will be kicked from
+        // your server. As Bots are used to nuke Discord servers this can be a massive
+        // protection for your Discord server. All bots added by the server owner
+        // are whitelisted (Boolean)
+        // (( Note: This option requires the moderation plugin to be loaded ))
+        anti_bots: false,
+
+        // This module is used to prevent mass chat spamming by automatically
+        // enabling slowmode in that specified channel for a configured amount
+        // of time.
+        message_spam: {
+            // Whether this module should be enabled (Boolean)
+            enabled: false,
+            // How many messages must be sent in one channel within one minute
+            // for this module to trigger (Number)
+            max_messages_per_minute: 50,
+            // Interval inbetween any user can only send up to 1 message (String)
+            slowmode: "10s",
+            // For how long should the slowmode stay (String)
+            duration: "15m",
+            // List of whitelisted channel ids. Messages sent in these channels
+            // do not count towards this system (Array)
+            whitelisted_channels: [],
+        },
+
+        // This module is used to prevent your server from being nuked. Depending
+        // on your configuration it monitors bans, kicks, channel and role deletion.
+        // Based on the intensity of these events being called the bot will take
+        // action and remove the roles of these users who have reached the maximum
+        // allowed amount of violations.
+        anti_nuke: {
+            // Whether this module should be enabled (Boolean)
+            enabled: false,
+            // List of events that count towards max_vls (maximum violations). 
+            // Each user starts with the violation score of 0. The number is reset
+            // every 15 minutes. For each action below the score is increased by
+            // the configured number. Based on the default configuration banning
+            // any user is a heavier violation than deleting a role. Whenever the
+            // score reached the configured maximum allowed violations the bot will
+            // take action and remove the user's roles (Object/Number)
+            violations: {
+                member_ban: 5,
+                member_kick: 3,
+                channel_delete: 2,
+                role_delete: 2,
+            },
+            // Maximum allowed violations per user within 15 minutes (Number)
+            max_vls: 15,
+            // This configuration option requires user ids. "whitelisted_users"
+            // represents a list of user ids who are whitelisted from this anti
+            // nuke module (Array)
+            whitelisted_users: ['707336356786864211'],
+            // This module is used to send a notification to the targeted user
+            // that the anti nuke module is about to be triggered if he continues
+            // his violations.
+            notification: {
+                // Whether this module should be enabled (Boolean)
+                enabled: false,
+                // How many vls must the user reach to get notified (Number)
+                vls: 10,
+            },
+        },
+    }
+}

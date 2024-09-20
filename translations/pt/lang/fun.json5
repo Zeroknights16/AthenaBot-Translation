@@ -1,0 +1,197 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Fun                                                                            | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        // The Discord counting game is an activity where users take turns to sequentially 
+        // count up in a designated channel, with specific rules such as alternating users 
+        // and penalties for mistakes. Setting it up encourages user engagement and
+        // interaction within the community, fostering a sense of participation and fun.
+        counting_game: {
+            // Whether the counting game should be enabled (Boolean)
+            enabled: true,
+            // If set to true the message author must be alternating with each
+            // number sent. Otherwise the counter will not go up and the message
+            // will be deleted. No panalty will be applied (Boolean)
+            alternating_users: false,
+            // If set to true the counter will be reset if the message content
+            // does not match the next number in the sequence (Boolean)
+            reset_on_failure: true,
+            // If set to true the message author will be timed out for a specified
+            // duration if the message content does not match the next number in
+            // the sequence. The timeout duration is specified below (Boolean)
+            timeout_user_on_failure: true,
+            // The duration of the timeout if the message author fails to match
+            // the next number in the sequence. If "timeout_user_on_failure" is
+            // set to false this option will be ignored (String)
+            timeout_length: "15m",
+        },
+
+        level_system: {
+            // Whether the level system should be enabled (Boolean)
+            enabled: true,
+            // Formula to calculate the XP required to level up (String)
+            // Placeholder: %level%
+            level_up: "%level% * 5 + 20",
+            xp_gain: {
+                // Minimum XP gained per action (String)
+                min: "1",
+                // Maximum XP gained per action (String)
+                max: "%level%",
+                // Cooldown period in seconds between XP gains (Integer)
+                cooldown_in_seconds: 5,
+            },
+            blacklists: {
+                // List of user IDs that are excluded from gaining XP (Array)
+                users: [],
+                // List of channel IDs where XP gain is disabled (Array)
+                channels: [],
+                // List of category IDs where XP gain is disabled (Array)
+                categories: [],
+            },
+            notification: {
+                // Whether to send a reply notification on level up (Boolean)
+                reply: true,
+                // Whether to send a notification to a specific channel
+                // on level up (Boolean)
+                channel: false,
+            },
+            role_rewards: {
+                // Whether role rewards are enabled (Boolean)
+                enabled: false,
+                // Whenever a user reaches level x, the configured role will
+                // be applied (Array)
+                //
+                // Format: 
+                // {
+                //     level: <level>,
+                //     role_id: <role_id>,
+                // },
+                roles: [
+                    {
+                        level: 5,
+                        role_id: "804354034135597066",
+                    },
+                    {
+                        level: 10,
+                        role_id: "804354033338286130",
+                    },
+                ]
+            }
+        },
+
+        // The starboard feature allows users to highlight notable
+        // messages. When a message receives a specified number of
+        // reactions with a designated emoji, it gets reposted in
+        // a designated starboard channel for visibility.
+        starboard: {
+            // Whether this feature should be enabled (Boolean)
+            enabled: false,
+            // The emoji that users must react with to add a
+            // message to the starboard (String)
+            emoji: "⭐",
+            // The number of reactions required for a message
+            // to be added to the starboard (Integer)
+            reactions: 10,
+            // List of channel IDs where the starboard feature
+            // is enabled (Array)
+            whitelisted_channels: [],
+            // List of category IDs where the starboard feature
+            // is enabled (Array)
+            whitelisted_categories: ["804354056575254558"],
+        },
+
+        // The birthday feature allows for the celebration and 
+        // recognition of users' birthdays within the server.
+        birthday: {
+            // The cooldown period for setting or changing a
+            // birthday. It is recommended to leave this value
+            // at 1 year to prevent abuse (String)
+            birthday_set_cooldown: "1y",
+            // Whether to send a birthday notification to
+            // a specific channel whenever someone has
+            // birthday (Boolean)
+            channel_notification: true,
+            special_role: {
+                // Whether to assign a special role to users
+                // on their birthday (Boolean)
+                enabled: false,
+                // The ID of the role to assign to users on
+                // their birthday (String)
+                role_id: "804354034135597066",
+            },
+        },
+
+        // The quote of the day feature provides a daily 
+        // inspirational or thought-provoking quote.
+        quote_of_the_day: {
+            // Whether the quote of the day feature is 
+            // enabled (Boolean)
+            enabled: true,
+            // The frequency at which the quote should
+            // be sent, e.g., "1d" for daily (String)
+            send_every: "7d",
+            // List of role IDs - These roles are mentioned
+            // (@) once a new quote is being sent (Array)
+            mention_roles: [],
+            // Whether to create a thread for each quote
+            // of the day where your members can discuss
+            // the topic on (Boolean)
+            create_thread: true,
+        },
+
+        // The question of the day feature provides a daily
+        // question to engage users.
+        question_of_the_day: {
+            // Whether the question of the day feature
+            // is enabled (Boolean)
+            enabled: true,
+            // The frequency at which the question should
+            // be sent, e.g., "1d" for daily (String)
+            send_every: "3d",
+            // List of role IDs - These roles are mentioned
+            // (@) once a new question is being sent (Array)
+            mention_roles: ['804354037662220289'],
+            // Whether to create a thread for each question
+            // of the day where your members can discuss
+            // the topic on (Boolean)
+            create_thread: true,
+            // A dataset of questions to be used for the 
+            // question of the day (Array)
+            dataset: [
+                "What is your favorite color?",
+                "What is your favorite food?",
+                "What is your favorite movie?",
+                "What is your favorite book?",
+                "What is your favorite hobby?",
+                "What is your favorite season?",
+                "What is your favorite animal?",
+                "What is your favorite song?",
+                "What is your favorite sport?",
+                "What is your favorite holiday destination?",
+                "What is your favorite TV show?",
+                "What is your favorite ice cream flavor?",
+                "What is your favorite childhood memory?",
+                "What is your favorite way to relax?",
+                "What is your favorite type of weather?",
+                "What is your favorite quote?",
+                "What is your favorite time of day?",
+                "What is your favorite thing to do on weekends?",
+                "What is your favorite type of cuisine?",
+                "What is your favorite drink?",
+            ],
+        },
+    },
+}

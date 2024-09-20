@@ -1,0 +1,933 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      cmdTranslation                                                                 | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    "commands": {
+        av: {
+            "name": "av",
+            "description": "Display the avatar of a user",
+        },
+        debug: {
+            "name": "debug",
+            "description": "Utilities for bot development/configuration",
+            "subcommand": {
+                "message": {
+                    "name": "message",
+                    "description": "View any configured message in file lang.json",
+                },
+            },
+        },
+        help: {
+            "name": "help",
+            "description": "Information about the bot",
+        },
+        info: {
+            "name": "info",
+            "description": "User information",
+        },
+        leaderboard: {
+            "name": "leaderboard",
+            "description": "Displays guild leaderboards",
+        },
+        ping: {
+            "name": "ping",
+            "description": "Bot's latency",
+        },
+        reload: {
+            "name": "reload",
+            "description": "Reload features of the bot",
+            "subcommand": {
+                "config": {
+                    "name": "config",
+                    "description": "Reload configuration file",
+                },
+                "command": {
+                    "name": "command",
+                    "description": "Reload command",
+                },
+            },
+        },
+        restart: {
+            "name": "restart",
+            "description": "Restart bot",
+        },  
+        server: {
+            "name": "server",
+            "description": "Displays information about the server",
+        },
+        stats: {
+            "name": "stats",
+            "description": "Displays several statistics",
+            "subcommand": {
+                "guild": {
+                    "name": "guild",
+                    "description": "Displays guild statistics",
+                },
+                "user": {
+                    "name": "user",
+                    "description": "Displays user statistics",
+                },
+            },
+        },
+        stealemoji: {
+            "name": "stealemoji",
+            "description": "Steal an emoji",
+        },
+        taccept: {
+            "name": "taccept",
+            "description": "Accept an application",
+        },
+        tadd: {
+            "name": "tadd",
+            "description": "Add user to ticket channel",
+        },
+        tapplication: {
+            "name": "tapplication",
+            "description": "Application panel management",
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Applies application button to a message",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Removes ticket button from a message",
+                },
+                "default": {
+                    "name": "default",
+                    "description": "Generates default application panel",
+                },
+                "enable": {
+                    "name": "enable",
+                    "description": "Reenable application form",
+                },
+                "disable": {
+                    "name": "disable",
+                    "description": "Close application form",
+                }
+            },
+        },
+        tblacklist: {
+            "name": "tblacklist",
+            "description": "Blacklist user from the ticket system",
+        },
+        tclaim: {
+            "name": "tclaim",
+            "description": "Claim ticket",
+        },
+        tclose: {
+            "name": "tclose",
+            "description": "Close ticket",
+        },
+        tdeny: {
+            "name": "tdeny",
+            "description": "Deny an application",
+        },
+        tdiscuss: {
+            "name": "tdiscuss",
+            "description": "Discuss ticket with other staff members",
+        },
+        televate: {
+            "name": "televate",
+            "description": "Elevate ticket access",
+        },
+        tlower: {
+            "name": "tlower",
+            "description": "Lower ticket access",
+        },
+        tmove: {
+            "name": "tmove",
+            "description": "Move ticket to different category",
+        },
+        tpanel: {
+            "name": "tpanel",
+            "description": 'Generate a new ticketpanel',
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Applies Ticket button to a message",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Removes ticket button from a message",
+                },
+                "default": {
+                    "name": "default",
+                    "description": "Generates default ticket panel",
+                },
+            },
+        },
+        tremove: {
+            "name": "tremove",
+            "description": "Remove user from ticket channel",
+        },
+        trename: {
+            "name": "trename",
+            "description": "Rename ticket channel",
+        },
+        treset: {
+            "name": "treset",
+            "description": "Reset ticket data",
+            "subcommand": {
+                "stats": {
+                    "name": "stats",
+                    "description": "Reset ticket statistics",
+                },
+                "cooldown": {
+                    "name": "app_cooldown",
+                    "description": "Unset application cooldown",
+                },
+                "application": {
+                    "name": "application",
+                    "description": "Delete application data",
+                },
+            }
+        },
+        tunblacklist: {
+            "name": "tunblacklist",
+            "description": "Unblacklist user from the ticket system",
+        },
+        tunclaim: {
+            "name": "tunclaim",
+            "description": "Unclaim ticket",
+        },
+        demote: {
+            "name": "demote",
+            "description": "Demote a staff member",
+        },
+        promote: {
+            "name": "promote",
+            "description": "Promote a staff member",
+        },
+        resign: {
+            "name": "resign",
+            "description": "Let a member resign from the staff team",
+            "subcommand": {
+                "yourself": {
+                    "name": "yourself",
+                    "description": "Resign from the staff team",
+                },
+                "force": {
+                    "name": "force",
+                    "description": "Force resign a staff member",
+                }
+            }
+        },
+        roster: {
+            "name": "roster",
+            "description": "Staff roster management",
+            "subcommand": {
+                "generate": {
+                    "name": "generate",
+                    "description": "Generate a staff roster list",
+                },
+                "assign": {
+                    "name": "assign",
+                    "description": "Assign a staff member to a specified role",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Remove a member from the roster",
+                },
+                "sync": {
+                    "name": "sync",
+                    "description": "Synchronize staff roster panel message",
+                }
+            }
+        },
+        task: {
+            "name": "task",
+            "description": "Monitor your tasks",
+            "subcommand": {
+                "list": {
+                    "name": "list",
+                    "description": "List of your assigned (active) tasks",
+                },
+                "get": {
+                    "name": "get",
+                    "description": "Detailed information about a specified task",
+                },
+                "mark": {
+                    "name": "mark",
+                    "description": "Update a specified task's current state",
+                },
+                "note": {
+                    "name": "note",
+                    "description": "Leave a note on a specified task",
+                },
+                "claim": {
+                    "name": "claim",
+                    "description": "Claim a task",
+                }
+            }
+        },
+        taskadmin: {
+            "name": "taskadmin",
+            "description": "Task management",
+            "subcommand": {
+                "create": {
+                    "name": "create",
+                    "description": "Create a new task",
+                },
+                "delete": {
+                    "name": "delete",
+                    "description": "Delete a task",
+                },
+                "assignment": {
+                    "name": "assignment",
+                    "description": "Assign or remove user to/from task",
+                },
+                "edit": {
+                    "name": "edit",
+                    "description": "Edit the task, its current state or leave a note",
+                },
+                "list": {
+                    "name": "list",
+                    "description": "List of (active) tasks",
+                },
+            }
+        },
+        tempvoice: {
+            "name": "tempvoice",
+            "description": "Manage your temporary voice channel",
+            "subcommand": {
+                "setname": {
+                    "name": "setname",
+                    "description": "Set the name of your voice channel",
+                },
+                "setlimit": {
+                    "name": "setlimit",
+                    "description": "Set the user limit if your voice channel",
+                },
+                "visibility": {
+                    "name": "visibility",
+                    "description": "Change the visibility of your voice channel",
+                },
+                "moderate": {
+                    "name": "moderate",
+                    "description": "Moderate the members of your voice channel",
+                },
+                "setowner": {
+                    "name": "setowner",
+                    "description": "Change the owner of your voice channel",
+                },
+            }
+        },
+        coupon: {
+            "name": "coupon",
+            "description": "Manages your Tebex coupons",
+            "subcommand": {
+                "create": {
+                    "name": "create",
+                    "description": "Create a new coupon",
+                },
+                "delete": {
+                    "name": "delete",
+                    "description": "Void a coupon",
+                }
+            }
+        },
+        giftcard: {
+            "name": "giftcard",
+            "description": "Manages your Tebex giftcards",
+            "subcommand": {
+                "create": {
+                    "name": "create",
+                    "description": "Create a new giftcard",
+                },
+                "delete": {
+                    "name": "delete",
+                    "description": "Void a giftcard",
+                },
+                "topup": {
+                    "name": "topup",
+                    "description": "Add more credits to an existing gift card",
+                }
+            }
+        },
+        tebexban: {
+            "name": "tebexban",
+            "description": "Bans ip or user from using tebex store",
+        },
+        ban: {
+            "name": "ban",
+            "description": "Ban an user from the server",
+        },
+        clearhistory: {
+            "name": "clearhistory",
+            "description": "Clear an user's inactive punishment history",
+            "subcommand": {
+                "all": {
+                    "name": "all",
+                    "description": "Clears the complete inactive user punishment history",
+                },
+                "type": {
+                    "name": "type",
+                    "description": "Clears specified punishment type from user history",
+                }
+            }
+        },
+        history: {
+            "name": "history",
+            "description": "View punishment history of a member",
+        },
+        kick: {
+            "name": "kick",
+            "description": "Kick an user from the server",
+        },
+        lock: {
+            "name": "lock",
+            "description": "Locks a specified channel",
+        },
+        mute: {
+            "name": "mute",
+            "description": "Prevent a user from typing",
+        },
+        nick: {
+            "name": "nick",
+            "description": "Set an user's nickname",
+        },
+        punishment: {
+            "name": "punishment",
+            "description": "View information about a specified punishment",
+        },
+        purge: {
+            "name": "purge",
+            "description": "Purge a specific amount of messages",
+        },
+        slowmode: {
+            "name": "slowmode",
+            "description": "Manage slowmode",
+        },
+        unban: {
+            "name": "unban",
+            "description": "Unban an user from the server",
+        },
+        unlock: {
+            "name": "unlock",
+            "description": "Unlocks a specified channel",
+        },
+        unmute: {
+            "name": "unmute",
+            "description": "Allow a user to resume typing",
+        },
+        unwarn: {
+            "name": "unwarn",
+            "description": "Unwarn an user",
+        },
+        warn: {
+            "name": "warn",
+            "description": "Warn an user",
+        },
+        ac: {
+            "name": "ac",
+            "description": "Generates an activity check",
+        },
+        birthday: {
+            "name": "birthday",
+            "description": "Manage your birthday",
+            "subcommand": {
+                "set": {
+                    "name": "set",
+                    "description": "Set your birthday",
+                },
+                "get": {
+                    "name": "get",
+                    "description": "Get another users birthday",
+                },
+                "edit": {
+                    "name": "edit",
+                    "description": "Edit the privacy of your birthday",
+                },
+                "delete": {
+                    "name": "delete",
+                    "description": "Delete your birthday",
+                }
+            }
+        },
+        dicksize: {
+            "name": "dicksize",
+            "description": "Displays an user\'s dicksize",
+        },
+        gtn: {
+            "name": "gtn",
+            "description": "Guess the Number game",
+        },
+        hangman: {
+            "name": "hangman",
+            "description": "Hangman game",
+        },
+        higherorlower: {
+            "name": "higherorlower",
+            "description": "Higher or Lower game",
+        },
+        level: {
+            "name": "level",
+            "description": "Displays user level",
+        },
+        leveladmin: {
+            "name": "leveladmin",
+            "description": "Level management",
+            "subcommand": {
+                "set": {
+                    "name": "set",
+                    "description": "Modify an user's level",
+                },
+                "reset-user": {
+                    "name": "reset-user",
+                    "description": "Reset user level data",
+                },
+                "reset-all": {
+                    "name": "reset-all",
+                    "description": "Reset level data of all users",
+                }
+            }
+        },
+        meme: {
+            "name": "meme",
+            "description": "Need a funny picture?",
+        },
+        rps: {
+            "name": "rps",
+            "description": "Rock, Paper, Scissors!",
+        },
+        sudo: {
+            "name": "sudo",
+            "description": "Send a fake message from another user",
+        },
+        trivia: {
+            "name": "trivia",
+            "description": "Trivia game",
+        },
+        verify: {
+            "name": "verify",
+            "description": "Manual verify a specified user",
+        },
+        verifypanel: {
+            "name": "verifypanel",
+            "description": "Generates verification panel",
+        },
+        invites: {
+            "name": "invites",
+            "description": "Check an user's invites",
+        },
+        invitesadmin: {
+            "name": "invitesadmin",
+            "description": "Invites management",
+            "subcommand": {
+                "resetUser": {
+                    "name": "reset-user",
+                    "description": "Reset an user's invite data",
+                },
+                "resetAll": {
+                    "name": "reset-all",
+                    "description": "Reset this guild's invite data",
+                },
+                "modify": {
+                    "name": "modify",
+                    "description": "Modify an user's invite data",
+                },
+            }
+        },
+        whoinvited: {
+            "name": "whoinvited",
+            "description": "Check who invited an user",
+        },
+        giveaway: {
+            "name": "giveaway",
+            "description": "Manage giveaways",
+            "subcommand": {
+                "create": {
+                    "name": "create",
+                    "description": "Create a new giveaway",
+                },
+                "end": {
+                    "name": "end",
+                    "description": "End a giveaway early",
+                },
+                "reroll": {
+                    "name": "reroll",
+                    "description": "Reroll a giveaway",
+                },
+            }
+        },
+        buttons: {
+            "name": "buttons",
+            "description": "Manage custom buttons",
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Add a custom button to a message",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Remove a custom button from a message",
+                },
+            }
+        },
+        channelstats: {
+            "name": "channelstats",
+            "description": "Manage statistic channels",
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Adds statistic channel",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Removes statistic channel",
+                },
+            }
+        },
+        editmsg: {
+            "name": "editmsg",
+            "description": "Edit a message sent by this bot",
+            "subcommand": {
+                "message": {
+                    "name": "message",
+                    "description": "Edit a message sent by this bot",
+                },
+                "embed": {
+                    "name": "embed",
+                    "description": "Edit an embed sent by this bot",
+                },
+                "id": {
+                    "name": "id",
+                    "description": "Edit a predefined message",
+                },
+            }
+        },
+        poll: {
+            "name": "poll",
+            "description": "Poll management",
+            "subcommand": {
+                "create": {
+                    "name": "create",
+                    "description": "Creates a new poll",
+                },
+                "end": {
+                    "name": "end",
+                    "description": "Ends a poll early",
+                },
+            }
+        },
+        reactionrole: {
+            "name": "reactionrole",
+            "description": "Manage reactionroles",
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Add reactionrole to a message",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Remove reactionrole from a message",
+                },
+            }
+        },
+        remindme: {
+            "name": "remindme",
+            "description": "Manage remindme notifications",
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Adds a remindme notification",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Removes a remindme notification",
+                },
+                "list": {
+                    "name": "list",
+                    "description": "List active remindme notifications",
+                },
+            }
+        },
+        roleall: {
+            "name": "roleall",
+            "description": "Applies a specified role to every member",
+        },
+        sendmsg: {
+            "name": "sendmsg",
+            "description": "Send messages with the bot",
+            "subcommand": {
+                "embed": {
+                    "name": "embed",
+                    "description": "Generates a new embed message",
+                },
+                "message": {
+                    "name": "message",
+                    "description": "Generate a new message",
+                },
+                "id": {
+                    "name": "id",
+                    "description": "Generate a predefined message",
+                },
+                "delete": {
+                    "name": "delete",
+                    "description": "Delete a predefined message",
+                },
+                "list": {
+                    "name": "list",
+                    "description": "Get a list of all predefined messages",
+                },
+            }
+        },
+        sticky: {
+            "name": "sticky",
+            "description": "Manage sticky messages",
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Adds a sticky message",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Removes a sticky message",
+                },
+            }
+        },
+        suggest: {
+            "name": "suggest",
+            "description": "Submit a suggestion",
+        },
+        bank: {
+            "name": "bank",
+            "description": "Manage your bank",
+            "subcommand": {
+                "info": {
+                    "name": "info",
+                    "description": "Information about your wallet",
+                },
+                "withdraw": {
+                    "name": "withdraw",
+                    "description": "Withdraw money from your bank account",
+                },
+                "deposit": {
+                    "name": "deposit",
+                    "description": "Deposit money to your bank account",
+                },
+                "spy": {
+                    "name": "spy",
+                    "description": "Spy on someone's wallet",
+                },
+            }
+        },
+        beg: {
+            "name": "beg",
+            "description": "Beg for money or other goods",
+        },
+        booster: {
+            "name": "booster",
+            "description": "Manage your boosters",
+            "subcommand": {
+                "list": {
+                    "name": "list",
+                    "description": "Displays a list of your boosters",
+                },
+                "activate": {
+                    "name": "activate",
+                    "description": "Activates a booster",
+                },
+            }
+        },
+        claim: {
+            "name": "claim",
+            "description": "Claim your daily/weekly rewards",
+            "subcommand": {
+                "daily": {
+                    "name": "daily",
+                    "description": "Claim your daily rewards",
+                },
+                "weekly": {
+                    "name": "weekly",
+                    "description": "Claim your weekly rewards",
+                },
+            }
+        },
+        coins: {
+            "name": "coins",
+            "description": "View your coins balance",
+        },
+        economyadmin: {
+            "name": "economyadmin",
+            "description": "Economy admin commands",
+            "subcommand": {
+                "coins": {
+                    "name": "coins",
+                    "description": "Set a user's coins balance",
+                },
+                "karma": {
+                    "name": "karma",
+                    "description": "Set a user's karma balance",
+                },
+                "lootbox": {
+                    "name": "lootbox",
+                    "description": "Set a user's lootbox balance",
+                },
+                "booster": {
+                    "name": "booster",
+                    "description": "Adds a booster to an user",
+                },
+                "reset": {
+                    "name": "reset",
+                    "description": "Reset a user economy progress",
+                },
+            }
+        },
+        job: {
+            "name": "job",
+            "description": "Start working!",
+        },
+        lootbox: {
+            "name": "lootbox",
+            "description": "Opens a lootbox",
+        },
+        quests: {
+            "name": "quests",
+            "description": "View a list of available quests",
+            "subcommand": {
+                "daily": {
+                    "name": "daily",
+                    "description": "Manage your daily quests",
+                },
+                "weekly": {
+                    "name": "weekly",
+                    "description": "Manage your weekly quests",
+                },
+            }
+        },
+        rank: {
+            "name": "rank",
+            "description": "Displays an user's current rank",
+        },
+        rob: {
+            "name": "rob",
+            "description": "Try to rob someone for their coins",
+        },
+        shop: {
+            "name": "shop",
+            "description": "Generates the shopping panel",
+        },
+        autoplay: {
+            "name": "autoplay",
+            "description": "Autoplay random related songs",
+        },
+        back: {
+            "name": "back",
+            "description": "Plays the previous track",
+        },
+        bump: {
+            "name": "bump",
+            "description": "Bump a song to the first spot in the queue",
+        },
+        clear: {
+            "name": "clear",
+            "description": "Clear the current queue",
+        },
+        filters: {
+            "name": "filters",
+            "description": "Manage audio filters",
+            "subcommand": {
+                "reset": {
+                    "name": "reset",
+                    "description": "Clear all applied filters",
+                },
+                "toggle": {
+                    "name": "toggle",
+                    "description": "Toggle audio filter",
+                },
+            }
+        },
+        lavalink: {
+            "name": "lavalink",
+            "description": "Lavalink node statistics",
+        },
+        loop: {
+            "name": "loop",
+            "description": "Manage loop mode",
+            "subcommand": {
+                "off": {
+                    "name": "off",
+                    "description": "Default mode with no loop active",
+                },
+                "queue": {
+                    "name": "queue",
+                    "description": "Loop the current queue",
+                },
+                "track": {
+                    "name": "track",
+                    "description": "Repeat the current track",
+                },
+            }
+        },
+        lyrics: {
+            "name": "lyrics",
+            "description": "Get lyrics for a track",
+        },
+        nowplaying: {
+            "name": "nowplaying",
+            "description": "Shows the currently playing song",
+        },
+        pause: {
+            "name": "pause",
+            "description": "Pause the playback",
+        },
+        play: {
+            "name": "play",
+            "description": "Play a song",
+        },
+        queue: {
+            "name": "queue",
+            "description": "Shows the current queue",
+        },
+        remove: {
+            "name": "remove",
+            "description": "Removes a song from the queue",
+        },
+        replay: {
+            "name": "replay",
+            "description": "Replays the current track",
+        },
+        resume: {
+            "name": "resume",
+            "description": "Resumes the current song",
+        },
+        seek: {
+            "name": "seek",
+            "description": "Seeks to a certain time in the song",
+        },
+        shuffle: {
+            "name": "shuffle",
+            "description": "Shuffles the queue",
+        },
+        skip: {
+            "name": "skip",
+            "description": "Skips current track",
+        },
+        skipto: {
+            "name": "skipto",
+            "description": "Skips to a specific song in the queue",
+        },
+        stop: {
+            "name": "stop",
+            "description": "Stop the playback",
+        },
+        volume: {
+            "name": "volume",
+            "description": "Update audio volume",
+        },
+    }
+}

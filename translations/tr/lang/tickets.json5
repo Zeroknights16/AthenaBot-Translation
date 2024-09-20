@@ -1,0 +1,226 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Tickets                                                                        | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        // Whether the ticket creator should receive a copy of the ticket transcript (Boolean)
+        send_transcript_to_ticket_creator: true,
+        // Whether ticket transcripts should be saved on disk - C:%root%/logs/transcripts/ - (Boolean)
+        save_ticket_transcript_on_disk: true,
+        //Whether permissions should be synced with the new ticket category once moved (/tmove) (Boolean)
+        update_permissions_on_move: true,
+        // Ticket channel name, available placeholders: %random%, %creator%, %created_total%, %category% (String)
+        ticket_channel_name: "ticket-%random%",
+        // Max messages the transcript will include (Number)
+        ticket_transcript_message_limit: 200,
+        // Whether tickets should be automatically closed when the ticket creator leaves the discord (Boolean)
+        close_ticket_after_creator_left: true,
+        // Whether whenever a ticket's permission level is being updated the effected role should be pinged (Boolean)
+        ping_role_at_permission_update: false,
+        // If set to true a user can create one ticket per category, if set to false the user can create one
+        // ticket at all - this excludes applications (Boolean)
+        limit_tickets_per_category: false,
+        // If set to true the ticket transcripts are uploaded to your private web server.
+        // This will replace the ticket transcript files and replace them with a link (Boolean)
+        enable_web_server: true,
+        // If set to true the staff member who claimed a ticket will receive a copy of the 
+        // ticket transcript once the ticket is being closed (Boolean)
+        send_transcript_to_claimed_user: false,
+        // If set to true the ticket create message will not be generated as embed but
+        // rather as a plain message (Boolean)
+        send_plain_ticket_create_message: false,
+
+
+        ticket_categories: [
+        {
+            // Ticket category name (String)
+            category: "General Support",
+            // Ticket category description (String)
+            description: "Select to create a General ticket.",
+            // Custom or default Emoji (String)
+            // * Default: https://emojidb.org/discord-copy-and-paste-emojis - 
+            // * Custom: https://support.discord.com/hc/en-us/community/posts/360038896012-Can-Get-Emoji-ID-When-You-re-On-Chrome
+            emoji: "❓",
+            // Discord category ID (String)
+            // All ticket channels will be generated under this category.
+            category_id: "833732233021751306",
+            // Permission level, for more information please check out the configuration
+            // option "permission_levels" below (Number)
+            permission_level: 0,
+            // Ticket create questions, for more information please check out the
+            // configuration option "ticket_create_questions" below. This configuration
+            // option requires the ID found below. Set to null to disable (String/null)
+            ticket_create_questions: "first_question_set",
+            // List of role IDs - These roles are mentioned (@) once a ticket of this category 
+            // is being created (Array)
+            mention_roles: [
+                "804354029076348959",
+            ],
+
+            // First ticket message sent by the bot. 
+            // Available placeholders: %creator%, %ticket_channel% (Object)
+            ticket_create_message: {
+                author: {
+                    name: '%guild%',
+                    icon_url: '%guild_icon%',
+                },
+                title: "``🎫 Ticket Created``",
+                description: "Hey %creator%,\nThank you for creating %ticket_channel%, we will get back to you as soon as possible.\n\nWhilst you are waiting for a response please explain the reason why you created this ticket by following this format:\n\n``IGN:``\n``Realm:``\n``Reason:``\n",
+                defaultFooter: true,
+                defaultTimestamp: true,
+                userIcon: true,
+            },
+        },
+        {
+            category: "Bug Report",
+            description: "Select to submit a Bug report.",
+            emoji: "🚫",
+            category_id: "833732304366338128",
+            permission_level: 1,
+            ticket_create_questions: null,
+            mention_roles: [
+                "804354029076348959",
+            ],
+
+            ticket_create_message: {
+                author: {
+                    name: '%guild%',
+                    icon_url: '%guild_icon%',
+                },
+                title: "``🎫 Ticket Created``",
+                description: "Hey %creator%,\nThank you for creating %ticket_channel%, we will get back to you as soon as possible.\n\nWhilst you are waiting for a response please explain the reason why you created this ticket by following this format:\n\n``IGN:``\n``Realm:``\n``Reason:``\n",
+                defaultFooter: true,
+                defaultTimestamp: true,
+                userIcon: true,
+            },
+        },
+        ],
+
+        // Each ticket is assigned one permission level. Permission levels
+        // are represented by certain roles. Whenever a ticket is being created
+        // the role that represents the assigned permission level (for example: 1)
+        // and all above (level 2, 3, 4, ...) will gain access to the ticket.
+        //
+        // The further down you get in the list below the higher is its permission level.
+        //
+        // Each ticket's permission level can be updated on Discord using specific
+        // commands or the buttons applied to the ticket creation message.
+        // The bot will either increase the permission level or decrease it.
+        // Depending on that a specific role will either be removed from the ticket
+        // or added (Array)
+        permission_levels: [
+            "804354029076348959", // Level 0
+            "804354022612926515", // Level 1
+            "804354019455139900", // Level 2
+            "804354017580810260", // ...
+        ],
+
+        // For each ticket category you can configure up to 5 questions
+        // that have to be answered before being able to create a ticket.
+        // This can help speeding up the process of supporting any user
+        // because a list of set common questions is already answered.
+        ticket_create_questions: {
+            // Whether this module should be enabled (Boolean)
+            enabled: true,
+            // The question list contains any "question set" that can
+            // be set as requirement for opening any ticket.
+            //
+            // The format is as follows:
+            // question_list: {
+            //      "<question_set_id>": [
+            //          {
+            //              question: ...
+            //              ...
+            //          },
+            //          ...
+            //      ],
+            //      "<question_set_id_number_2>": [
+            //          ...
+            //      ]
+            // }
+            question_list: {
+                "first_question_set": [
+                    {
+                        question: "What is your ingame name?",
+                        max_letters: 20,
+                        min_letters: 2,
+                        required: true,
+                    },
+                    {
+                        question: "On which Minecraft realm are you playing?",
+                        max_letters: 20,
+                        min_letters: 3,
+                        required: true,
+                    },
+                    {
+                        question: "What's your issue?",
+                        max_letters: 200,
+                        min_letters: 10,
+                        required: true,
+                    },
+                ]
+            }
+        },
+
+        // This module can be used to award faster support for a set list of roles.
+        // Whenever a ticket is being created the bot will check whether the ticket creator
+        // owns any of the configured roles. If so a list of roles will be mentioned (@)
+        // in his ticket additionally. 
+        // For example this can be used to provide faster support for users who boost your server
+        role_priority: {
+            // Whether this module should be enabled (Boolean)
+            enabled: false,
+            // List of role IDs. If the ticket creator owns any of the following roles
+            // this module will trigger (Array)
+            roles: [
+                "804354037662220289",
+            ],
+            // List of role IDs. All of these roles will be mentioned additionally
+            // to the usual ticket category configuration (Array)
+            mention_roles: [
+                "884573835205148692",
+            ]
+        },
+
+        out_of_service: {
+            // This module is used to notify users if they create a ticket during out
+            // of service hours. This will send a short message explaining that the
+            // user can expect a longer waiting time til support contacts him (Boolean)
+            enabled: false,
+            // This configuration option sets your out of service hours.
+            // The timezone is based on the machine the bot is being hosted on. Start the
+            // bot and check console on the left side to see the current time at your host.
+            // This configuration option accepts following format only: "hh:mm"! (String)
+            time: {
+                start: "23:00",
+                finished: "07:00",
+            }
+        },
+
+        // Whether following ticket buttons should be displayed at the ticket creation embed (Object)
+        ticket_buttons: {
+            // Ticket close button (Boolean)
+            close: true,
+            // Ticket elevate button (Boolean)
+            elevate: true,
+            // Ticket lower button (Boolean)
+            lower: true,
+            // Ticket claim button (Boolean)
+            claim: true,
+            // Ticket unclaim button (Boolean)
+            unclaim: true,
+        },
+    },
+}

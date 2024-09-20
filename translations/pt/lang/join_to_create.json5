@@ -1,0 +1,84 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Join To Create                                                                 | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        // Configuration option "temporary_channels" defines which voice
+        // channels are used to create temporary voice channels within
+        // a specified category.
+        temporary_channels: [
+            {
+                // Voice channel id of the channel you must join to create
+                // a temporary voice channel within the category specified
+                // one line below (String)
+                voice_channel_id: "804354081711849492",
+                // Category id of the category within the temporary channel
+                // will be created whenever someone joins the channel
+                // specified above (String)
+                category_id: "1196838574943907850",
+                // Settings id. The settings that belong to the specified
+                // id must be configured below in this configuration file.
+                // These settings are applied to each voice channel of this
+                // type when they are being generated (String)
+                settings_id: "settings_1",
+            },
+        ],
+
+        // Within this configuration option any settings specified above 
+        // must be configured. If you would like to configure more than
+        // one set of settings follow following format:
+        //
+        // settings: {
+        //      "<setting_set_id_number_1>": {
+        //              channel_name: ...
+        //              ...
+        //      },
+        //      "<setting_set_id_number_2>": {
+        //          ...
+        //      },
+        // }
+        //
+        settings: {
+            // Setting id
+            "settings_1": {
+                // The name of the temporary voice channel (String)
+                // Available Placeholder: %user%
+                channel_name: "%user%'s call",
+                // Limits how many users can join the voice channel.
+                // This configuration option accepts any number between
+                // 0 and 99. Set to 0 to disable this limit (Number)
+                user_limit: 4,
+                // Whether the voice channel is locked by default.
+                // Noone than the owner would be able to join (Boolean)
+                locked: false,
+                // Whether the voice channel is hidden by default.
+                // Noone than the owner would be able to see the 
+                // channel (Boolean)
+                hidden: false,
+                // This configuration option defines who can see the
+                // channel by default. If the following role id is
+                // invalid the base_permission_role is set to the
+                // @everyone role, so everyone can join and see
+                // the channel. If your Discord offers a member or
+                // verified role set this option to that role (String)
+                base_permission_role: "804354037662220289",
+                // Anyone who inherits one of these roles cannot join
+                // this temporary voice channel by default. This
+                // configuration option requires role ids (Array)
+                blacklisted_roles: [],
+            },
+        }
+    }
+}

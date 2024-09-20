@@ -1,0 +1,95 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Core                                                                           | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        activity: {
+            // Status Mode, choose one of the following: (String)
+            // "online", "dnd", "idle" or "offline"
+            status: "online",
+            // Activity Type, choose one of the following: (String)
+            // "competing", "listening", "playing", "streaming", "watching"
+            activity_type: "playing",
+            // Activity of the bot (displayed after e.g. watching <...>) (Array)
+            // If multiple acivities are added it will choose a random one each 30 seconds
+            // Placeholder: %tickets_open%, %members%
+            activity: ["on discord.iynxdev.com", "/help"]
+        },
+
+        cooldown: {
+            // Whether a cooldown should be enabled for commands and interactions (Boolean)
+            enabled: true,
+            // Cooldown length in seconds (Number)
+            cooldown_length: 4,
+
+            role_bypass: {
+                // Whether users who own a specified role can bypass cooldowns (Boolean)
+                enabled: true,
+                // If enabled, each user who owns this role or one above in the
+                // Discord role hierarchy will bypass all cooldowns. (String)
+                role_id: "804354015638716443",
+            },
+
+            custom_command_cooldowns: {
+                // Whether custom command cooldowns should be enabled (Boolean)
+                enabled: true,
+                // If enabled, each command can have its own custom cooldown.
+                // The default cooldown length will be overriden. If none
+                // is set for the command below the default cooldown will
+                // be used. (Object)
+                // 
+                // Format: "<command_name>": <cooldown_length_seconds>,
+                commands: {
+                    "restart": 60,
+                },
+            },
+        },
+
+        // The following configured placeholders are available 
+        // through out all message configurations (Array)
+        //
+        // You can add as many global placeholders as you want.
+        // If one global placeholder does not work make sure its syntax is valid
+        global_placeholders: [
+            // {
+            //     placeholder: '%{placeholder}%',
+            //     value: '{placeholder value}',
+            // }
+            {
+                placeholder: '%bbb%',
+                value: 'https://builtbybit.com/resources/multibot-discord-server-bot.28547/',
+            }
+        ],
+
+        // If set to true the help page is dynamically addressed to the user who
+        // requested the help page. The user will only see the commands that
+        // he has permission to execute (Boolean)
+        permission_based_help_page: false,
+
+        // List of channel ids where no commands can be executed (Array)
+        commands_blacklisted_channels: [],
+
+        // Configuration for calltime statistics
+        calltime_requirement_users: {
+            // Whether the calltime statistic requirement should be enabled (Boolean)
+            enabled: true,
+            // Minimum amount of users required to be within a voice channel
+            // for the calltime statistic to count (Number)
+            minmum_users: 2,
+            // Whether bots count towards this minimum user requirement (Boolean)
+            bots_included: false,
+        }
+    },
+}

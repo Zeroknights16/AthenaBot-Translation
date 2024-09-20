@@ -1,0 +1,59 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Music                                                                          | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        // Lavalink nodes for our music system. Please follow following format:
+        // { 
+        //     name: '<random name>',
+        //     url: '<ip>:<port>',
+        //     auth: '<password>',
+        // },
+        //
+        // You can provide multiple nodes and the bot will select the one with
+        // lowest traffic for best sound quality (Array)
+        //
+        // (!) Note: If you have purchased the lavalink addon this configuration
+        // option will be overriden.
+        lavalink_nodes: [
+            {
+			    name: 'Iynx',
+			    url: '',
+			    auth: '',
+            },
+        ],
+
+        // Whenever a new music session is being started the bot will start
+        // playing music with the following volume value set (Number)
+        //
+        // (!) This option requires one number between 1 and 1000
+        default_volume: 60,
+
+        // This feature is used to limit the usage of all music 
+        // commands to specific configured channels.
+        whitelist_channels: {
+            // Whether this feature should be enabled (Boolean)
+            enabled: false,
+            // List of channel ids where all music commands should be available (Array)
+            channels: [],
+        },
+
+        // If you own the "lavalink" addon the system is automatically being redirected
+        // to our server even if you have a configured lavalink node above. If you wish
+        // to use your own lavalink server even though you own the lavalink addon set
+        // this value to false (Boolean)
+        use_own_lavalink: true,
+    },
+}

@@ -1,0 +1,121 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Application                                                                    | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        // If set to true the accepted user will be automatically given his roles,
+        // the staff roster panel will be updated and a promotion message will be 
+        // generated depending on the staff_management configuration. (Boolean)
+        // For more information please take a look at the staff_management config.
+        staff_management_hook: true,
+        // Application channel name, available placeholders: %random%, %creator%, %created_total%, %category% (String)
+        application_channel_name: "app-%random%",
+
+
+        applications: [
+        {
+            // Application name (String)
+            application: "Staff",
+            // Ticket category description (String)
+            description: "Select to start a Staff Application",
+            // Custom or default Emoji (String)
+            // * Default: https://emojidb.org/discord-copy-and-paste-emojis - 
+            // * Custom: https://support.discord.com/hc/en-us/community/posts/360038896012-Can-Get-Emoji-ID-When-You-re-On-Chrome
+            emoji: "👮",
+            // Discord category ID (String)
+            // All application channels will be generated under this category.
+            category_id: "1160209305593716776",
+            // Application questions, for more information please check out the
+            // configuration option "application_questions" below. This configuration
+            // option requires the ID found below. (String)
+            questions: "first_question_set",
+            // List of role IDs - These roles gain access to the channel to
+            // view and review the application of this category.
+            permission_list: [
+                "804354019455139900",
+            ],
+            // List of role IDs - These roles are mentioned (@) once an application
+            // of this category is being opened (Array)
+            mention_roles: [
+                "804354019455139900",
+            ]
+        },
+        ],
+
+
+        // For each application category you can configure up to unlimited questions
+        // that have to be answered to be able to submit the application
+        // The format is as follows:
+        //
+        // application_questions: {
+        //      "<question_set_id>": [
+        //          {
+        //              question: ...
+        //              ...
+        //          },
+        //          ...
+        //      ],
+        //      "<question_set_id_number_2>": [
+        //          ...
+        //      ]
+        // }
+        application_questions: {
+            "first_question_set": [
+                {
+                    question: "What is your IGN?",
+                    max_letters: 20,
+                    min_letters: 2,
+                    placeholder: "Enter a value...",
+                    required: true,
+                },
+                {
+                    question: "What is your timezone?",
+                    max_letters: 20,
+                    min_letters: 1,
+                    placeholder: "Enter a value...",
+                    required: true
+                },
+                {
+                    question: "How old are you?",
+                    max_letters: 20,
+                    min_letters: 1,
+                    placeholder: "Enter a value...",
+                    required: true
+                },
+                {
+                    question: "Do you have a working microphone?",
+                    max_letters: 100,
+                    min_letters: 2,
+                    placeholder: "Enter a value...",
+                    required: true
+                },
+                {
+                    question: "Are you able to record videos?",
+                    max_letters: 100,
+                    min_letters: 2,
+                    placeholder: "Enter a value...",
+                    required: true
+                },
+                {
+                    question: "Have you been punished before?",
+                    max_letters: 800,
+                    min_letters: 2,
+                    placeholder: "Enter a value...",
+                    required: true
+                },
+            ],
+        },
+    }
+}

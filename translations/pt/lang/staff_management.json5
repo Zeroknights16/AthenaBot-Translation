@@ -1,0 +1,123 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                      | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Staff Management                                                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        // The configuration option "staff_roles" defines all existing staff roles.
+        // Depending on this configuration a roster message can be generated.
+        // Users can only be promoted/demoted to roles that are listed below
+        // therefor please add the member role at the end of the list, so a
+        // staff member can be removed from the staff team (Array)
+        //
+        // The format for this configuration option is as follows:
+        // {
+        //     'name': 'owner', 
+        //     'id': '804354016888750150',
+        //     'sorting_role': false,
+        // }
+        // - "name" represents the role's name that is being used for nicknames.
+        // - "id" represents the role's ID
+        // - "sorting_role" represents a staff role that is used to sort your members
+        // in the activity list only. An example for this is the role management
+        // which is applied to all sradmins and managers. SrAdmin and Manager are no
+        // sorting roles while management is.
+        //
+        // The order of the following list does not have to match the one from the
+        // Discord role hierarchy. If you include sorting roles make sure these are
+        // placed below the staff roles that are sorted by this role.
+
+        staff_roles: [
+            {
+                'name': 'Owner',
+                'id': '804354016888750150',
+                'sorting_role': false,
+            },
+            {
+                'name': 'Manager',
+                'id': '804354021481381909',
+                'sorting_role': false,
+            },
+            {
+                'name': 'Developer',
+                'id': '804354022202277918',
+                'sorting_role': false,
+            },
+            {
+                'name': 'Management',
+                'id': '804354019455139900',
+                'sorting_role': true,
+            },
+            {
+                'name': 'Admin',
+                'id': '804354024048427009',
+                'sorting_role': false,
+            },
+            {
+                'name': 'Sr. Mod',
+                'id': '804354024816115713',
+                'sorting_role': false,
+            },
+            {
+                'name': 'Sr. Staff',
+                'id': '804354022612926515',
+                'sorting_role': true,
+            },
+            {
+                'name': 'Moderator',
+                'id': '804354026568155137',
+                'sorting_role': false,
+            },
+            {
+                'name': 'Helper',
+                'id': '804354028419022888',
+                'sorting_role': false,
+            },
+            {
+                'name': 'Staff',
+                'id': '804354029076348959',
+                'sorting_role': true,
+            },
+            {
+                'name': 'Member',
+                'id': '804354037662220289',
+                'sorting_role': false,
+            }
+        ],
+
+        manage_roles: {
+            // If set to true sorting roles are applied additional 
+            // to the updated staff position's role (Boolean)
+            apply_sorting_roles: true,
+            // Whether staff roles should be removed if a user is being demoted (Boolean)
+            // Please note only roles that are listed above are being removed.
+            remove_roles_if_demoted: true,
+        },
+
+        manage_nicknames: {
+            // Whether the bot should update the user's nickname based on their staff role (Boolean)
+            enabled: true,
+            // User nickname format, Placeholder: %role_name%, %user% (String)
+            format: "%role_name% » %user%",
+        },
+
+        // If set to true the roster panel message is being automatically updated whenever
+        // a staff member is being demoted, promoted or resigned (Boolean)
+        sync_roster_panel: true,
+
+        // Whether the specified user should be notified in dms when they have been
+        // promoted/demoted or force resigned on your server (Boolean)
+        dm_notification: true,
+    },
+}

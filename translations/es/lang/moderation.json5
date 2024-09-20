@@ -1,0 +1,227 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Moderation                                                                     | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        // This configuration option accepts one role id. Every user who owns either
+        // the configured role or one above in the Discord role hierarchy cannot get
+        // punished using any moderation commands. 
+        // We suggest to set this configuration option to the lowest staff role id
+        // on your servers so that all staff members are protected from moderation
+        // commands (String) 
+        punishment_whitelist: '804354024048427009',
+
+        // List of role ids who get their access to write denied in every channel
+        // once it has been locked using /lock (Array)
+        lock_roles: [
+            "804354037662220289",
+            "804354036521762818",
+        ],
+
+        global_punishment: {
+            // If set to true all bans that include a valid proof image will be
+            // submitted to Iynx Development. They are sharing the data through
+            // all AthenaBot instances to allow other customers to ban the user
+            // on their servers as well based on your proof. If no proof image 
+            // is provided the ban data is not being submitted (Boolean)
+            send_data: true,
+            // If set to true all global ban requests will be sent to a configured
+            // channel including all important information (name, reason, proof, ...).
+            // For each request your moderators can decide based on the data whether
+            // they want to ban the user on your Discord as well or not (Boolean)
+            receive: true,
+        },
+
+        // This option is used to configure how you would like the mute function to
+        // work. If set to true a "mute" role will be applied instead of the user
+        // being timeouted with Discord's built in feature. Applying a mute role
+        // can be useful due to timeouted users no longer being able to use any
+        // interaction buttons/dropdown menus. This means they wouldn't be able
+        // to create a ticket to appeal their punishment.
+        // Note: If you enable role based mutes you must create a mute role and
+        // change their permission in the Discord channel settings so they cannot
+        // write anymore. The bot does only apply the role nothing else!
+        role_based_mute: {
+            // Whether you would like to enable role based mutes (Boolean)
+            enabled: true,
+            // Mute role ID (String)
+            role_id: "804354031388196894",
+        },
+
+        warn_punishments: {
+            // If set to true a user who has reached x warnings will get punished (Boolean)
+            enabled: true,
+            // Punishment configuration. Whenever someone has reached x warnings the user
+            // will get punished depending on the configuration. The user can get either
+            // muted, kicked or banned. To configure punishments once x warnings have been
+            // reached add following element to the array below:
+            //
+            //  {
+            //      violations: 3, 
+            //      type: "MUTE",
+            //      duration: "1d",
+            //      reset: false,
+            //  },
+            //
+            // - "violations" represents the number of warnings the user must get in order for
+            // this punishment to be applied.
+            // - "type" represents the punishment type. It can be either "MUTE", "KICK", or "BAN"
+            // - "duration" represents the length of the punishment. If the punishment is of type
+            // "KICK" this option is being ignored. If you'd like to punish the user permanently
+            // set it to 0 -> "duration: 0,".
+            // - "reset" represents whether after this punishment was applied the violation count
+            // should be reset to 0. This is usefull if you want to punish someone with the same
+            // punishment every 3 warnings.
+            //
+            // You can add as many punishments you want but please make a user is only getting
+            // punished once for each new warning. 
+            punishments: [
+                {
+                    violations: 1,
+                    type: "MUTE",
+                    duration: "3h",
+                    reset: false,
+                },
+                {
+                    violations: 3,
+                    type: "MUTE",
+                    duration: "1d",
+                    reset: false,
+                },
+                {
+                    violations: 5,
+                    type: "MUTE",
+                    duration: 0,
+                    reset: true,
+                },
+            ]
+        },
+
+        // If set to true every time a member is being punished the member
+        // will be dmed by the bot telling them that they have been punished,
+        // how and the reason (Boolean)
+        punishment_notification: true,
+
+        automod: {
+            // Whether this module should be enabled (Boolean)
+            enabled: true,
+            // Configuration option "role_whitelist" requires a role id.
+            // If the message author owns the configured role or one above
+            // in the Discord role hierarchy the message is whitelisted 
+            // from any automod rules (String)
+            role_whitelist: "884573835205148692",
+            // If set to true all messages sent in tickets are whitelisted
+            // from any automod rules (Boolean)
+            whitelist_ticket_channels: true,
+            // Configuration option "whitelisted_channels" requires a list
+            // of channel ids. Every message that is being sent in one of
+            // these channels is whitelisted from any automod rules (Array)
+            whitelisted_channels: ["804354119523500082", "947577986939514881"],
+            // Configuration option "whitelisted_categories" requires a list
+            // of category ids. Every message that is being sent in one of
+            // the channels within these categories is whitelisted from any
+            // automod rules (Array)
+            whitelisted_categories: ["804354054829506590"],
+            // Automod rule configuration. Every message that has not been
+            // whitelisted via the configurations above is being checked by
+            // the automod. If it is being flagged by one of the regex patterns
+            // the message is being deleted and warning is being executed if
+            // configured so. You can add as many rules as you want.
+            // Format:
+            //
+            // {
+            //      name: "",
+            //      regex: "",
+            //      warn: false,
+            // },
+            //
+            // - "name" represents the name of the rule. It is a random name
+            // that will be used for warn reasons and in the automod delete
+            // message
+            // - "regex" represents a syntax that allows you to match strings
+            // with specific patterns. To validate or generate any regex 
+            // patterns that are compatible with Javascript please visit this
+            // website: https://regexr.com/. If you have any questions or you
+            // would like us to generate these for you please create a ticket.
+            // - "warn" represents whether a warning is issued or not. If set
+            // to true the author of a message that is being flagged by this
+            // rule will get warned.
+            rules: [
+                {
+                    name: "Invite Filter",
+                    regex: "(https?:\/\/)?(www\\.)?(discord\\.(gg|io|me|li)|discordapp\\.com\/invite|discord.com\/invite|watchanimeattheoffice.com\/invite|dis.gd\/invite|bigbean.solutions\/invite)\/+[a-zA-Z0-9]{4,16}",
+                    warn: true,
+                },
+                {
+                    name: "Numeric IP Filter",
+                    regex: "(?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d{1})\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d{1})",
+                    warn: true,
+                },
+            ],
+            // "custom_roles" represents specific automod rules that require 
+            // a different detection than possible with regex filters.
+            custom_rules: {
+                // The "mentions" filter deletes messages based on the amount
+                // of mentions it includes.
+                mentions: {
+                    // Whether this automod rule should be enabled (Boolean)
+                    enabled: true,
+                    // "name" represents the name of the rule. It is a random name
+                    // that will be used for warn reasons and in the automod delete
+                    // message (String)
+                    name: "Mention Filter",
+                    // How many mentions are allowed per message (Number)
+                    max_mentions: 3,
+                    // Should the bot issue a warning if this automod rule
+                    // has filtered a message (Boolean)
+                    warn: true,
+                },
+
+                // The "repeating_message" filter deletes all repeating messages
+                // which content is the same.
+                repeating_message: {
+                    // Whether this automod rule should be enabled (Boolean)
+                    enabled: true,
+                    // "name" represents the name of the rule. It is a random name
+                    // that will be used for warn reasons and in the automod delete
+                    // message (String)
+                    name: "Repeating Message Filter",
+                    // How many times can a user post the same message until the
+                    // automod takes action (Number)
+                    max_message_repeat: 4,
+                    // Should the bot issue a warning if this automod rule
+                    // has filtered a message (Boolean)
+                    warn: true,
+                },
+
+                // The "blacklisted_words" filter deletes messages based on if
+                // the message includes any blacklisted words
+                blacklisted_words: {
+                    // Whether this automod rule should be enabled (Boolean)
+                    enabled: true,
+                    // "name" represents the name of the rule. It is a random name
+                    // that will be used for warn reasons and in the automod delete
+                    // message (String)
+                    name: "Blacklisted Words Filter",
+                    // List of blacklisted words that should get deleted (Array)
+                    blacklisted_words: ['asshole', 'hoe'],
+                    // Should the bot issue a warning if this automod rule
+                    // has filtered a message (Boolean)
+                    warn: true,
+                },
+            }
+        },
+    },
+}

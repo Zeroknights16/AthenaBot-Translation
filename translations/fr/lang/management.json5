@@ -1,0 +1,265 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      Management                                                                     | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    config: {
+        // Logs are messages that save information about a
+        // specific change or event at a Discord channel. 
+        // Below you can select which logs are enabled.
+        // If set to false no log of the specified type
+        // will be generated (Boolean)
+        logs: {
+            channel_create: true,
+            channel_delete: true,
+            channel_update: true,
+            emoji_create: true,
+            emoji_delete: true,
+            emoji_update: true,
+            member_join: true,
+            member_leave: true,
+            member_update: true,
+            invite_create: true,
+            invite_delete: true,
+            invite_update: true,
+            message_delete: true,
+            message_update: true,
+            role_create: true,
+            role_delete: true,
+            role_update: true,
+            sticker_create: true,
+            sticker_delete: true,
+            sticker_update: true,
+            thread_create: true,
+            thread_delete: true,
+            voice_state: true,
+            command_execute: true,
+            direct_message: true,
+        },
+
+        // Welcome message is a nice feature that welcomes every user
+        // who joins your Discord server by sending a welcome message
+        // in a configured channel.
+        welcome_message: {
+            // Whether this module should be enabled (Boolean)
+            enabled: true,
+            // Configuration option "type" can be either set to IMAGE or
+            // EMBED. If set to IMAGE a welcome card will be generated
+            // instead of an embed. If set to EMBED a message will be
+            // generated which can be configured in configuration file 
+            // lang.json (String)
+            type: "IMAGE",
+            // The following configuration option can be ignored if welcome
+            // type was set to "EMBED". Title and description defines with
+            // what text the image is being generated. The text is displayed
+            // below the user's avatar (String)
+            image: {
+                // Available placeholder for both options: %user%, %member_size%
+                // If you'd like to see other placeholders please let us know
+                title: "Welcome %user%",
+                description: "Member #%member_size%",
+            },
+            // Whether the user should get pinged at their welcome 
+            // message (Boolean)
+            mention_user: true,
+            // If enabled this module will react with a set emoji to all
+            // new generated welcome messages or images.
+            emoji: {
+                // Whether this module should be enabled (Boolean)
+                enabled: false,
+                // Custom or default Emoji (String)
+                // * Default: https://emojidb.org/discord-copy-and-paste-emojis - 
+                // * Custom: https://support.discord.com/hc/en-us/community/posts/360038896012-Can-Get-Emoji-ID-When-You-re-On-Chrome
+                emoji: "👋",
+            },
+            // Whether the welcome message should only be sent after a
+            // successfull verification (Boolean)
+            send_after_verification: false,
+            // If set to true an additional welcome message will be sent
+            // in the user's direct messages. The content of this message
+            // can be edited in the configuration file lang.json (Boolean)
+            dm_message: false,
+        },
+
+        // Whether a goodbye message should get sent at a configured channel
+        // whenever someone left your Discord server. The goodbye message
+        // can get configured in the configuration file lang.json (Boolean)
+        goodbye_message: {
+            // Whether this module should be enabled (Boolean)
+            enabled: false,
+            // Configuration option "type" can be either set to IMAGE or
+            // EMBED. If set to IMAGE a goodbye card will be generated
+            // instead of an embed. If set to EMBED a message will be
+            // generated which can be configured in configuration file 
+            // lang.json (String)
+            type: "IMAGE",
+            // The following configuration option can be ignored if welcome
+            // type was set to "EMBED". Title and description defines with
+            // what text the image is being generated. The text is displayed
+            // below the user's avatar (String)
+            image: {
+                // Available placeholder for both options: %user%, %member_size%
+                // If you'd like to see other placeholders please let us know
+                title: "Goodbye %user%",
+                description: "Member #%member_size%",
+            },
+            // If enabled this module will react with a set emoji to all
+            // new generated welcome messages or images.
+            emoji: {
+                // Whether this module should be enabled (Boolean)
+                enabled: false,
+                // Custom or default Emoji (String)
+                // * Default: https://emojidb.org/discord-copy-and-paste-emojis - 
+                // * Custom: https://support.discord.com/hc/en-us/community/posts/360038896012-Can-Get-Emoji-ID-When-You-re-On-Chrome
+                emoji: "👋",
+            },
+        },
+
+        // "auto_roles" is a feature that applies a set list of roles
+        // to any user who joins your Discord server. This can be used
+        // to automatically apply notification roles, a member role if
+        // you wish to disable the verification system or just an 
+        // unverified role.
+        auto_role: {
+            // Whether this module should be enabled (Boolean)
+            enabled: false,
+            // List of roles that should be applied to any new user.
+            // This configuration option requires role ids (Array) 
+            roles_to_add: ['804354038987882588'],
+        },
+
+        // "auto_thread_reaction" is a module that automatically reacts
+        // with a set list of emojis at any new thread that is being
+        // created below a configured channel. This can be used to
+        // introduce suggestion channel using forum channels like we
+        // did in our Support Discord.
+        auto_thread_reaction: {
+            // Whether this module should be enabled (Boolean)
+            enabled: false,
+            // Forum channel id (String)
+            parent_id: "1155463362377961615",
+            // List of emojis to add to each new thread. This configuration
+            // option supports standard and custom emojis. If you choose to
+            // use standard emojis take a look at this website to get a copy
+            // of the emoji: 
+            // * https://emojidb.org/discord-copy-and-paste-emojis
+            //
+            // If you choose to use custom emojis the ID is required. Take a 
+            // look at the following website to learn more about how to get
+            // custom emoji ids:
+            // * https://support.discord.com/hc/en-us/community/posts/360038896012
+            emojis: ["✅", "❌"],
+        },
+
+        // "auto_message_response" is a feature that works similar to our
+        // automod system. It scans messages that are sent in your Discord
+        // for a specific regex pattern. Regex patterns are specific words
+        // or a list of characters. If a regex pattern was included in the
+        // message sent by another user the bot will automatically respond
+        // with a message.
+        // The use for this feature is for example if someone writes "ip"
+        // in the chat to get the Minecraft server ip of your server you
+        // use this system to automatically respond to the user with your
+        // server ip.
+        // You can add as many automatic message responses you want.
+        auto_message_response: {
+            // Whether this module should be enabled (Boolean)
+            enabled: false,
+            // List of keywords that the bot should respond to.
+            // Please follow following format:
+            //
+            // {
+            //     regex: "<regex_pattern>",
+            //     predefined_message_id: "<predefined_message_id>",
+            //     auto_delete_after_seconds: <seconds/false>,
+            //     permission_role_id: <Boolean>,
+            //     ticket_only: <Boolean>,
+            // },
+            //
+            keywords: [
+                {
+                    // Regex is used to determain whether a message inherits the
+                    // keyword. Please do not provide regex flaggs (String)
+                    // * For more information view https://en.wikipedia.org/wiki/Regular_expression.
+                    // * Website to help you building your regex: https://regex101.com/
+                    // If you have any questions create a ticket
+                    regex: "store",
+                    // The response for this keyword must be configured using
+                    // the /sendmsg and /editmsg command in your Discord.
+                    // Once you have configured a message to your liking
+                    // press the save button to assign your message design
+                    // a specified predefined message id which you must 
+                    // put down below (String)
+                    predefined_message_id: "test",
+                    // After a set time the response will be automatically
+                    // deleted. If you wish to leave the message permanently
+                    // in the channel set following option to false (Number/false)
+                    auto_delete_after_seconds: 20,
+                    // The permissions that are required for this auto response to
+                    // trigger. This addon hooks into the core permission config 
+                    // and works the exact same way as any commands or interactions.
+                    // For more information please visit the permission config.
+                    // The following option requires a role from the "permission_levels"
+                    // list unless the built in permission system is disabled,
+                    // then it will be ignored (String)
+                    permission_role: "everyone",
+                    // Whether this automatic response can only be triggered
+                    // in ticket channels (Boolean)
+                    ticket_only: false,
+                },
+            ]
+        },
+
+        // This module is used to automatically publish any messages
+        // sent in announcement channels.
+        auto_crosspost: {
+            // Whether this module should be enabled (Boolean)
+            enabled: false,
+            // List of announcement channel ids. If this module
+            // is set to enabled and no channel ids are included
+            // in the Array below all announcement channels
+            // are affected by this system (Array)
+            channel_ids: [],
+        },
+
+        // This module handles the scheduling and sending of predefined
+        // messages to specified channels at set intervals. It allows
+        // you to automate message delivery based on a defined schedule.
+        scheduled_messages: {
+            // Whether this module should be enabled (Boolean)
+            enabled: false,
+            // List of messages that should be sent at a specific
+            // time interval. 
+            messages: [
+                {
+                    // Channel id where the message should be
+                    // sent (String)
+                    channel_id: "1266773588619427840",
+                    // This option defines what message is being sent.
+                    // The sent message must be configured using
+                    // the /sendmsg and /editmsg command in your Discord.
+                    // Once you have configured a message to your liking
+                    // press the save button to assign your message design
+                    // a specified predefined message id which you must 
+                    // put down below (String)
+                    predefined_message_id: "test",
+                    // The cooldown period in seconds between each
+                    // message being sent. Please follow the format:
+                    // "<days>d <hours>h <minutes>m" (String)
+                    send_every: "3h",
+                }
+            ],
+        },
+    }
+}
