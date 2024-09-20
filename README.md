@@ -22,7 +22,7 @@ Welcome to the official repository for **translation files** for AthenaBot! This
 ---
 
 ## Contributors
-* EinfachMaiki (1211700590271266867) » German Translation 75%
+* EinfachMaiki (1211700590271266867) » German Translation **75%**
 
 ---
 
@@ -32,6 +32,12 @@ This repository contains **JSON** files with strings written in English that are
 
 - **File Format**: All files are in `.json` format.
 - **Goal**: Translate the English sentences inside the JSON files while keeping the file structure intact.
+
+
+## How to install one of the translation packages?
+
+Download the latest language pack at the releases tab. Unzip the directory and drop it into your "lang" directory of Athena. Set "enable_translations" in your common.json file to true and restart. If you have any questions please create a ticket.
+
 
 ## How to Contribute Using GitHub's Editor
 
@@ -91,5 +97,3 @@ That’s it! The maintainers will review your contribution and, once approved, y
 - **Do Not Change Structure**: Do not alter the JSON keys or the structure of the file, only the text values.
 
 ---
-
-
