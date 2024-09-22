@@ -12,9 +12,10 @@ Welcome to the official repository for **translation files** for AthenaBot! This
 
 ## Current State
 * 🇬🇧 English Translation: 100% complete (Default language)
+* 🇵🇱 Polish Translation: 100% complete
 * 🇩🇪 German Translation: 75% complete
+* 🇪🇸 Spanish Translation: 1% complete
 * 🇫🇷 French Translation: 0% complete
-* 🇪🇸 Spanish Translation: 0% complete
 * 🇳🇱 Dutch Translation: 0% complete
 * 🇹🇷 Turkish Translation: 0% complete
 * 🇵🇹 Portugese Translation: 0% complete
@@ -22,7 +23,9 @@ Welcome to the official repository for **translation files** for AthenaBot! This
 ---
 
 ## Contributors
+* werdykt (1047891236901630092) » Polish Translation **100%**
 * EinfachMaiki (1211700590271266867) » German Translation **75%**
+* neurological. (741947344379183184) » Spanish Translation **1%**
 
 ---
 
