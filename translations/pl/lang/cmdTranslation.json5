@@ -1,0 +1,933 @@
+// ####################################################################################################
+// # +----------------------------------------------------------------------------------------------+ #
+// # |                     ,   ,   ,   ,  ,   ,  ,       __   ___ ,   ,                             | #
+// # |                     |   |  |   |\  |   \ /       |  \ |__  \  /                              | #
+// # |                     |    |    |  \|    / \       |__/ |___  \/                               | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  Product:     Athena Bot                                                                     | #
+// # |  Version:     2.0.0                                                                          | #
+// # |  Config:      cmdTranslation                                                                 | #
+// # |                                                                                              | #
+// # |                                                                                              | #
+// # |  New options are added to this file automatically.                                           | #
+// # +----------------------------------------------------------------------------------------------+ #
+// ####################################################################################################
+{
+    "commands": {
+        av: {
+            "name": "av",
+            "description": "Wyświetl awatar użytkownika",
+        },
+        debug: {
+            "name": "debug",
+            "description": "Narzędzia do tworzenia/konfiguracji botów",
+            "subcommand": {
+                "message": {
+                    "name": "message",
+                    "description": "Wyświetl dowolną skonfigurowaną wiadomość w pliku lang.json",
+                },
+            },
+        },
+        help: {
+            "name": "help",
+            "description": "Informacje o bocie",
+        },
+        info: {
+            "name": "info",
+            "description": "Informacje o użytkowniku",
+        },
+        leaderboard: {
+            "name": "leaderboard",
+            "description": "Wyświetla rankingi serwera",
+        },
+        ping: {
+            "name": "ping",
+            "description": "Opóźnienie bota",
+        },
+        reload: {
+            "name": "reload",
+            "description": "Załaduj ponownie funkcje bota",
+            "subcommand": {
+                "config": {
+                    "name": "config",
+                    "description": "Załaduj ponownie plik konfiguracyjny",
+                },
+                "command": {
+                    "name": "command",
+                    "description": "Polecenie przeładowania",
+                },
+            },
+        },
+        restart: {
+            "name": "restart",
+            "description": "Uruchom ponownie bota",
+        },  
+        server: {
+            "name": "server",
+            "description": "Wyświetla informacje o serwerze",
+        },
+        stats: {
+            "name": "stats",
+            "description": "Wyświetla kilka statystyk",
+            "subcommand": {
+                "guild": {
+                    "name": "guild",
+                    "description": "Wyświetla statystyki serwera",
+                },
+                "user": {
+                    "name": "user",
+                    "description": "Wyświetla statystyki użytkownika",
+                },
+            },
+        },
+        stealemoji: {
+            "name": "stealemoji",
+            "description": "Ukradnij emoji",
+        },
+        taccept: {
+            "name": "taccept",
+            "description": "Zaakceptuj aplikację",
+        },
+        tadd: {
+            "name": "tadd",
+            "description": "Dodaj użytkownika do kanału zgłoszeń",
+        },
+        tapplication: {
+            "name": "tapplication",
+            "description": "Zarządzanie panelem aplikacji",
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Stosuje przycisk aplikacji do wiadomości",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Usuwa przycisk ticketa z wiadomości",
+                },
+                "default": {
+                    "name": "default",
+                    "description": "Generuje domyślny panel aplikacji",
+                },
+                "enable": {
+                    "name": "enable",
+                    "description": "Włącz ponownie formularz zgłoszeniowy",
+                },
+                "disable": {
+                    "name": "disable",
+                    "description": "Zamknij formularz zgłoszeniowy",
+                }
+            },
+        },
+        tblacklist: {
+            "name": "tblacklist",
+            "description": "Dodaj użytkownika do black listy w systemie zgłoszeń",
+        },
+        tclaim: {
+            "name": "tclaim",
+            "description": "Przejmij ticket",
+        },
+        tclose: {
+            "name": "tclose",
+            "description": "Zamknij ticket",
+        },
+        tdeny: {
+            "name": "tdeny",
+            "description": "Odrzuć aplikację",
+        },
+        tdiscuss: {
+            "name": "tdiscuss",
+            "description": "Omów ticket z innymi pracownikami",
+        },
+        televate: {
+            "name": "televate",
+            "description": "Zwiększ dostęp do ticketów",
+        },
+        tlower: {
+            "name": "tlower",
+            "description": "Zmniejsz dostęp do ticketów",
+        },
+        tmove: {
+            "name": "tmove",
+            "description": "Przenieś ticket do innej kategorii",
+        },
+        tpanel: {
+            "name": "tpanel",
+            "description": 'Wygeneruj nowy panel zgłoszeń',
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Stosuje przycisk Ticket do wiadomości",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Usuwa przycisk ticket z wiadomości",
+                },
+                "default": {
+                    "name": "default",
+                    "description": "Generuje domyślny panel ticket",
+                },
+            },
+        },
+        tremove: {
+            "name": "tremove",
+            "description": "Usuń użytkownika z kanału zgłoszeń",
+        },
+        trename: {
+            "name": "trename",
+            "description": "Zmień nazwę kanału ticketów",
+        },
+        treset: {
+            "name": "treset",
+            "description": "Zresetuj dane ticketa",
+            "subcommand": {
+                "stats": {
+                    "name": "stats",
+                    "description": "Zresetuj statystyki ticketów",
+                },
+                "cooldown": {
+                    "name": "app_cooldown",
+                    "description": "Cofnij czas odnowienia aplikacji",
+                },
+                "application": {
+                    "name": "application",
+                    "description": "Usuń dane aplikacji",
+                },
+            }
+        },
+        tunblacklist: {
+            "name": "tunblacklist",
+            "description": "Usuń z black listy użytkownika z systemu ticketów",
+        },
+        tunclaim: {
+            "name": "tunclaim",
+            "description": "Anuluj przejęcie ticketa",
+        },
+        demote: {
+            "name": "demote",
+            "description": "Zdegraduj członka personelu",
+        },
+        promote: {
+            "name": "promote",
+            "description": "Awansuj członka personelu",
+        },
+        resign: {
+            "name": "resign",
+            "description": "Pozwól członkowi zrezygnować z członkostwa w zespole pracowniczym",
+            "subcommand": {
+                "yourself": {
+                    "name": "yourself",
+                    "description": "Rezygnacja z zespołu pracowniczego",
+                },
+                "force": {
+                    "name": "force",
+                    "description": "Wymuś rezygnację członka personelu",
+                }
+            }
+        },
+        roster: {
+            "name": "roster",
+            "description": "Zarządzanie listą pracowników",
+            "subcommand": {
+                "generate": {
+                    "name": "generate",
+                    "description": "Wygeneruj listę pracowników",
+                },
+                "assign": {
+                    "name": "assign",
+                    "description": "Przypisz pracownika do określonej roli",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Usuń członka z listy",
+                },
+                "sync": {
+                    "name": "sync",
+                    "description": "Synchronizuj wiadomość panelu dyżurów personelu",
+                }
+            }
+        },
+        task: {
+            "name": "task",
+            "description": "Monitoruj swoje zadania",
+            "subcommand": {
+                "list": {
+                    "name": "list",
+                    "description": "Lista przypisanych (aktywnych) zadań",
+                },
+                "get": {
+                    "name": "get",
+                    "description": "Szczegółowe informacje na temat określonego zadania",
+                },
+                "mark": {
+                    "name": "mark",
+                    "description": "Zaktualizuj bieżący stan określonego zadania",
+                },
+                "note": {
+                    "name": "note",
+                    "description": "Zostaw notatkę dotyczącą określonego zadania",
+                },
+                "claim": {
+                    "name": "claim",
+                    "description": "Przejmij zadanie",
+                }
+            }
+        },
+        taskadmin: {
+            "name": "taskadmin",
+            "description": "Zarządzanie zadaniami",
+            "subcommand": {
+                "create": {
+                    "name": "create",
+                    "description": "Utwórz nowe zadanie",
+                },
+                "delete": {
+                    "name": "delete",
+                    "description": "Usuń zadanie",
+                },
+                "assignment": {
+                    "name": "assignment",
+                    "description": "Przypisz lub usuń użytkownika do/z zadania",
+                },
+                "edit": {
+                    "name": "edit",
+                    "description": "Edytuj zadanie, jego aktualny stan lub zostaw notatkę",
+                },
+                "list": {
+                    "name": "list",
+                    "description": "Lista (aktywnych) zadań",
+                },
+            }
+        },
+        tempvoice: {
+            "name": "tempvoice",
+            "description": "Zarządzaj tymczasowym kanałem głosowym",
+            "subcommand": {
+                "setname": {
+                    "name": "setname",
+                    "description": "Ustaw nazwę swojego kanału głosowego",
+                },
+                "setlimit": {
+                    "name": "setlimit",
+                    "description": "Ustaw limit użytkowników dla swojego kanału głosowego",
+                },
+                "visibility": {
+                    "name": "visibility",
+                    "description": "Zmień widoczność swojego kanału głosowego",
+                },
+                "moderate": {
+                    "name": "moderate",
+                    "description": "Moderuj członków swojego kanału głosowego",
+                },
+                "setowner": {
+                    "name": "setowner",
+                    "description": "Zmień właściciela swojego kanału głosowego",
+                },
+            }
+        },
+        coupon: {
+            "name": "coupon",
+            "description": "Zarządza kuponami Tebex",
+            "subcommand": {
+                "create": {
+                    "name": "create",
+                    "description": "Utwórz nowy kupon",
+                },
+                "delete": {
+                    "name": "delete",
+                    "description": "Unieważnij kupon",
+                }
+            }
+        },
+        giftcard: {
+            "name": "giftcard",
+            "description": "Zarządza Twoimi kartami upominkowymi Tebex",
+            "subcommand": {
+                "create": {
+                    "name": "create",
+                    "description": "Utwórz nową kartę podarunkową",
+                },
+                "delete": {
+                    "name": "delete",
+                    "description": "Unieważnij kartę podarunkową",
+                },
+                "topup": {
+                    "name": "topup",
+                    "description": "Dodaj więcej kredytów do istniejącej karty upominkowej",
+                }
+            }
+        },
+        tebexban: {
+            "name": "tebexban",
+            "description": "Blokuje IP lub użytkownika z korzystania ze sklepu tebex",
+        },
+        ban: {
+            "name": "ban",
+            "description": "Zablokuj użytkownika na serwerze",
+        },
+        clearhistory: {
+            "name": "clearhistory",
+            "description": "Wyczyść historię nieaktywnych kar użytkownika",
+            "subcommand": {
+                "all": {
+                    "name": "all",
+                    "description": "Czyści całą historię kar dla nieaktywnych użytkowników",
+                },
+                "type": {
+                    "name": "type",
+                    "description": "Usuwa określony rodzaj kary z historii użytkownika",
+                }
+            }
+        },
+        history: {
+            "name": "history",
+            "description": "Zobacz historię kar danego członka",
+        },
+        kick: {
+            "name": "kick",
+            "description": "Wyrzuć użytkownika z serwera",
+        },
+        lock: {
+            "name": "lock",
+            "description": "Blokuje określony kanał",
+        },
+        mute: {
+            "name": "mute",
+            "description": "Zablokuj użytkownikowi możliwość pisania",
+        },
+        nick: {
+            "name": "nick",
+            "description": "Ustaw pseudonim użytkownika",
+        },
+        punishment: {
+            "name": "punishment",
+            "description": "Wyświetlanie informacji o określonej karze",
+        },
+        purge: {
+            "name": "purge",
+            "description": "Usuń określoną liczbę wiadomości",
+        },
+        slowmode: {
+            "name": "slowmode",
+            "description": "Zarządzaj trybem zwolnionym",
+        },
+        unban: {
+            "name": "unban",
+            "description": "Odbanuj użytkownika z serwera",
+        },
+        unlock: {
+            "name": "unlock",
+            "description": "Odblokowuje określony kanał",
+        },
+        unmute: {
+            "name": "unmute",
+            "description": "Pozwól użytkownikowi wznowić pisanie",
+        },
+        unwarn: {
+            "name": "unwarn",
+            "description": "Zabierz ostrzeżenie użytkownikowi",
+        },
+        warn: {
+            "name": "warn",
+            "description": "Ostrzeż użytkownika",
+        },
+        ac: {
+            "name": "ac",
+            "description": "Generuje kontrolę aktywności",
+        },
+        birthday: {
+            "name": "birthday",
+            "description": "Zarządzaj swoimi urodzinami",
+            "subcommand": {
+                "set": {
+                    "name": "set",
+                    "description": "Ustaw swoje urodziny",
+                },
+                "get": {
+                    "name": "get",
+                    "description": "Informacje o urodzinach innego użytkownika",
+                },
+                "edit": {
+                    "name": "edit",
+                    "description": "Edytuj prywatność swoich urodzin",
+                },
+                "delete": {
+                    "name": "delete",
+                    "description": "Usuń swoje urodziny",
+                }
+            }
+        },
+        dicksize: {
+            "name": "dicksize",
+            "description": "Wyświetla rozmiar penisa użytkownika",
+        },
+        gtn: {
+            "name": "gtn",
+            "description": "Gra „Zgadnij liczbę”.",
+        },
+        hangman: {
+            "name": "hangman",
+            "description": "Gra Wisielec",
+        },
+        higherorlower: {
+            "name": "higherorlower",
+            "description": "Gra wyżej lub niżej",
+        },
+        level: {
+            "name": "level",
+            "description": "Wyświetla poziom użytkownika",
+        },
+        leveladmin: {
+            "name": "leveladmin",
+            "description": "Zarządzanie poziomem",
+            "subcommand": {
+                "set": {
+                    "name": "set",
+                    "description": "Zmodyfikuj poziom użytkownika",
+                },
+                "reset-user": {
+                    "name": "reset-user",
+                    "description": "Zresetuj dane poziomu użytkownika",
+                },
+                "reset-all": {
+                    "name": "reset-all",
+                    "description": "Zresetuj dane poziomów wszystkich użytkowników",
+                }
+            }
+        },
+        meme: {
+            "name": "meme",
+            "description": "Potrzebujesz śmiesznego zdjęcia?",
+        },
+        rps: {
+            "name": "rps",
+            "description": "Kamień, papier, nożyce!",
+        },
+        sudo: {
+            "name": "sudo",
+            "description": "Wyślij fałszywą wiadomość od innego użytkownika",
+        },
+        trivia: {
+            "name": "trivia",
+            "description": "Gra Trivia",
+        },
+        verify: {
+            "name": "verify",
+            "description": "Ręczna weryfikacja określonego użytkownika",
+        },
+        verifypanel: {
+            "name": "verifypanel",
+            "description": "Generuje panel weryfikacyjny",
+        },
+        invites: {
+            "name": "invites",
+            "description": "Sprawdź zaproszenia użytkownika",
+        },
+        invitesadmin: {
+            "name": "invitesadmin",
+            "description": "Kierowanie zaproszeniami",
+            "subcommand": {
+                "resetUser": {
+                    "name": "reset-user",
+                    "description": "Zresetuj dane zaproszenia użytkownika",
+                },
+                "resetAll": {
+                    "name": "reset-all",
+                    "description": "Zresetuj dane zaproszeń tego serwera",
+                },
+                "modify": {
+                    "name": "modify",
+                    "description": "Zmodyfikuj dane zaproszenia użytkownika",
+                },
+            }
+        },
+        whoinvited: {
+            "name": "whoinvited",
+            "description": "Sprawdź, kto zaprosił użytkownika",
+        },
+        giveaway: {
+            "name": "giveaway",
+            "description": "Zarządzaj giveawayami",
+            "subcommand": {
+                "create": {
+                    "name": "create",
+                    "description": "Utwórz nowy giveaway",
+                },
+                "end": {
+                    "name": "end",
+                    "description": "Zakończ giveaway wcześniej",
+                },
+                "reroll": {
+                    "name": "reroll",
+                    "description": "Ponownie rozlosuj giveaway",
+                },
+            }
+        },
+        buttons: {
+            "name": "buttons",
+            "description": "Zarządzaj niestandardowymi przyciskami",
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Dodaj niestandardowy przycisk do wiadomości",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Usuń niestandardowy przycisk z wiadomości",
+                },
+            }
+        },
+        channelstats: {
+            "name": "channelstats",
+            "description": "Zarządzaj kanałami statystyk",
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Dodaje kanał statystyk",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Usuwa kanał statystyk",
+                },
+            }
+        },
+        editmsg: {
+            "name": "editmsg",
+            "description": "Edytuj wiadomość wysłaną przez tego bota",
+            "subcommand": {
+                "message": {
+                    "name": "message",
+                    "description": "Edytuj wiadomość wysłaną przez tego bota",
+                },
+                "embed": {
+                    "name": "embed",
+                    "description": "Edytuj embed wysłany przez tego bota",
+                },
+                "id": {
+                    "name": "id",
+                    "description": "Edytuj predefiniowaną wiadomość",
+                },
+            }
+        },
+        poll: {
+            "name": "poll",
+            "description": "Zarządzanie ankietami",
+            "subcommand": {
+                "create": {
+                    "name": "create",
+                    "description": "Tworzy nową ankietę",
+                },
+                "end": {
+                    "name": "end",
+                    "description": "Kończy ankietę wcześniej",
+                },
+            }
+        },
+        reactionrole: {
+            "name": "reactionrole",
+            "description": "Zarządzaj reactionrole",
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Dodaj reactionrole do wiadomości",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Usuń reactionrole z wiadomości",
+                },
+            }
+        },
+        remindme: {
+            "name": "remindme",
+            "description": "Zarządzaj powiadomieniami o przypomnieniach",
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Dodaje powiadomienie o przypomnieniu",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Usuwa powiadomienie o przypomnieniu",
+                },
+                "list": {
+                    "name": "list",
+                    "description": "Lista aktywnych powiadomień przypominających",
+                },
+            }
+        },
+        roleall: {
+            "name": "roleall",
+            "description": "Stosuje określoną rolę do każdego członka",
+        },
+        sendmsg: {
+            "name": "sendmsg",
+            "description": "Wysyłaj wiadomości za pomocą bota",
+            "subcommand": {
+                "embed": {
+                    "name": "embed",
+                    "description": "Generuje nową wiadomość do embedu",
+                },
+                "message": {
+                    "name": "message",
+                    "description": "Wygeneruj nową wiadomość",
+                },
+                "id": {
+                    "name": "id",
+                    "description": "Wygeneruj predefiniowaną wiadomość",
+                },
+                "delete": {
+                    "name": "delete",
+                    "description": "Usuń wstępnie zdefiniowaną wiadomość",
+                },
+                "list": {
+                    "name": "list",
+                    "description": "Uzyskaj listę wszystkich predefiniowanych wiadomości",
+                },
+            }
+        },
+        sticky: {
+            "name": "sticky",
+            "description": "Zarządzaj przyklejonymi wiadomościami",
+            "subcommand": {
+                "add": {
+                    "name": "add",
+                    "description": "Dodaje przyklejoną wiadomość",
+                },
+                "remove": {
+                    "name": "remove",
+                    "description": "Usuwa przyklejoną wiadomość",
+                },
+            }
+        },
+        suggest: {
+            "name": "suggest",
+            "description": "Prześlij sugestię",
+        },
+        bank: {
+            "name": "bank",
+            "description": "Zarządzaj swoim bankiem",
+            "subcommand": {
+                "info": {
+                    "name": "info",
+                    "description": "Informacje o Twoim portfelu",
+                },
+                "withdraw": {
+                    "name": "withdraw",
+                    "description": "Wypłać pieniądze ze swojego konta bankowego",
+                },
+                "deposit": {
+                    "name": "deposit",
+                    "description": "Wpłać pieniądze na swoje konto bankowe",
+                },
+                "spy": {
+                    "name": "spy",
+                    "description": "Szpieguj czyjś portfel",
+                },
+            }
+        },
+        beg: {
+            "name": "beg",
+            "description": "Błagaj o pieniądze lub inne dobra",
+        },
+        booster: {
+            "name": "booster",
+            "description": "Zarządzaj swoimi boosterami",
+            "subcommand": {
+                "list": {
+                    "name": "list",
+                    "description": "Wyświetla listę Twoich boosterów",
+                },
+                "activate": {
+                    "name": "activate",
+                    "description": "Aktywuje wzmacniacz",
+                },
+            }
+        },
+        claim: {
+            "name": "claim",
+            "description": "Odbierz swoje codzienne/tygodniowe nagrody",
+            "subcommand": {
+                "daily": {
+                    "name": "daily",
+                    "description": "Odbierz swoje codzienne nagrody",
+                },
+                "weekly": {
+                    "name": "weekly",
+                    "description": "Odbierz swoje cotygodniowe nagrody",
+                },
+            }
+        },
+        coins: {
+            "name": "coins",
+            "description": "Sprawdź saldo swoich monet",
+        },
+        economyadmin: {
+            "name": "economyadmin",
+            "description": "Polecenia administratora",
+            "subcommand": {
+                "coins": {
+                    "name": "coins",
+                    "description": "Ustaw saldo monet użytkownika",
+                },
+                "karma": {
+                    "name": "karma",
+                    "description": "Ustaw saldo karmy użytkownika",
+                },
+                "lootbox": {
+                    "name": "lootbox",
+                    "description": "Ustaw saldo skrzynki z łupami użytkownika",
+                },
+                "booster": {
+                    "name": "booster",
+                    "description": "Dodaje wzmocnienie dla użytkownika",
+                },
+                "reset": {
+                    "name": "reset",
+                    "description": "Zresetuj postęp ekonomii użytkownika",
+                },
+            }
+        },
+        job: {
+            "name": "job",
+            "description": "Zacznij pracować!",
+        },
+        lootbox: {
+            "name": "lootbox",
+            "description": "Otwiera skrzynkę z łupami",
+        },
+        quests: {
+            "name": "quests",
+            "description": "Zobacz listę dostępnych zadań",
+            "subcommand": {
+                "daily": {
+                    "name": "daily",
+                    "description": "Zarządzaj swoimi codziennymi zadaniami",
+                },
+                "weekly": {
+                    "name": "weekly",
+                    "description": "Zarządzaj swoimi cotygodniowymi zadaniami",
+                },
+            }
+        },
+        rank: {
+            "name": "rank",
+            "description": "Wyświetla aktualną rangę użytkownika",
+        },
+        rob: {
+            "name": "rob",
+            "description": "Spróbuj okraść kogoś z monet",
+        },
+        shop: {
+            "name": "shop",
+            "description": "Generuje panel zakupowy",
+        },
+        autoplay: {
+            "name": "autoplay",
+            "description": "Automatyczne odtwarzanie losowych powiązanych utworów",
+        },
+        back: {
+            "name": "back",
+            "description": "Odtwarza poprzedni utwór",
+        },
+        bump: {
+            "name": "bump",
+            "description": "Przesuń piosenkę na pierwsze miejsce w kolejce",
+        },
+        clear: {
+            "name": "clear",
+            "description": "Wyczyść bieżącą kolejkę",
+        },
+        filters: {
+            "name": "filters",
+            "description": "Zarządzaj filtrami audio",
+            "subcommand": {
+                "reset": {
+                    "name": "reset",
+                    "description": "Wyczyść wszystkie zastosowane filtry",
+                },
+                "toggle": {
+                    "name": "toggle",
+                    "description": "Przełącz filtr audio",
+                },
+            }
+        },
+        lavalink: {
+            "name": "lavalink",
+            "description": "Statystyki węzła Lavalink",
+        },
+        loop: {
+            "name": "loop",
+            "description": "Zarządzaj trybem pętli",
+            "subcommand": {
+                "off": {
+                    "name": "off",
+                    "description": "Tryb domyślny bez aktywnej pętli",
+                },
+                "queue": {
+                    "name": "queue",
+                    "description": "Zapętl bieżącą kolejkę",
+                },
+                "track": {
+                    "name": "track",
+                    "description": "Powtórz bieżący utwór",
+                },
+            }
+        },
+        lyrics: {
+            "name": "lyrics",
+            "description": "Pobierz tekst utworu",
+        },
+        nowplaying: {
+            "name": "nowplaying",
+            "description": "Pokazuje aktualnie odtwarzany utwór",
+        },
+        pause: {
+            "name": "pause",
+            "description": "Wstrzymaj odtwarzanie",
+        },
+        play: {
+            "name": "play",
+            "description": "Puść piosenkę",
+        },
+        queue: {
+            "name": "queue",
+            "description": "Pokazuje bieżącą kolejkę",
+        },
+        remove: {
+            "name": "remove",
+            "description": "Usuwa utwór z kolejki",
+        },
+        replay: {
+            "name": "replay",
+            "description": "Odtwarza ponownie bieżący utwór",
+        },
+        resume: {
+            "name": "resume",
+            "description": "Wznawia bieżący utwór",
+        },
+        seek: {
+            "name": "seek",
+            "description": "Poszukuje określonego momentu w piosence",
+        },
+        shuffle: {
+            "name": "shuffle",
+            "description": "Przetasowuje kolejkę",
+        },
+        skip: {
+            "name": "skip",
+            "description": "Pomija bieżący utwór",
+        },
+        skipto: {
+            "name": "skipto",
+            "description": "Przechodzi do określonego utworu w kolejce",
+        },
+        stop: {
+            "name": "stop",
+            "description": "Zatrzymaj odtwarzanie",
+        },
+        volume: {
+            "name": "volume",
+            "description": "Zaktualizuj głośność dźwięku",
+        },
+    }
+}
